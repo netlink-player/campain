@@ -7,7 +7,7 @@ cssMathead.rel = "stylesheet";
 body.appendChild(cssMathead);
 
 var classMathead = document.createElement("div");
-classMathead.class = "masthead";
+classMathead.classList.add("masthead");
 var aMathead = document.createElement("a");
 aMathead.href = "https://netlink.vn/";
 var imgMathead = document.createElement("img");
