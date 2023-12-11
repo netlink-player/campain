@@ -1,4 +1,4 @@
-var body = document.body;
+var body = window.top.document.querySelector('body');
 console.log(body);
 
 var cssMathead = document.createElement("link");
