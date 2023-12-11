@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bannerAfter {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            height: 250px;
+            width: 300px;
+            transition: transform 0.7s;
+            z-index: 9999;
+        }
+
+        #closeBanner {
+            position: absolute;
+            left: 0px;
+            top: -20px;
+            height: 20px;
+            display: none;
+            width: 40px;
+            border-style: none;
+            font-weight: bold;
+            font-size: 40px;
+            background-color: #fff;
+            border-radius: 0 5px 0 0;
+            cursor: pointer;
+            border-top: 2px solid #e1e1e1;
+            border-left: 2px solid #e1e1e1;
+            border-right: 2px solid #e1e1e1;
+            transition: transform 0.7s;
+        }
+
+        .bannerAfterClose--transition {
+            transform: translateY(100%);
+        }
+
+        .closeBanner--transition {
+            transform: translateY(0%);
+        }
+    </style>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div id="bannerAfter">
+        <button id="closeBanner" title="Hidden">&#711;</button>
+    </div>
+    <script type="text/javascript" src="sticky.js"></script>
+</body>
+
+</html>

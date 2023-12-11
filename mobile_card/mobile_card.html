@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<style>
+    .image-stack {
+        position: relative;
+        width: 200px;
+        /* Định kích thước phù hợp */
+        height: 300px;
+        /* Định kích thước phù hợp */
+        overflow: hidden;
+    }
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .image.active {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <div class="image-stack">
+        <img src="image1.jfif" alt="Image 1" class="image">
+        <img src="image2.jfif" alt="Image 2" class="image">
+        <img src="image1.jpg" alt="Image 3" class="image">
+    </div>
+    <script>
+        const images = document.querySelectorAll('.image');
+        let currentIndex = 0;
+        let touchStartX = 0;
+        const swipeThreshold = 50;
+
+        function showImage(index) {
+            images.forEach(image => {
+                image.classList.remove('active');
+            });
+
+            images[index].classList.add('active');
+        }
+
+        function handleTouchStart(event) {
+            touchStartX = event.touches[0].clientX;
+        }
+
+        function handleTouchEnd(event) {
+            const touchEndX = event.changedTouches[0].clientX;
+            const touchDiff = touchEndX - touchStartX;
+
+            if (touchDiff > swipeThreshold) {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            } else if (touchDiff < -swipeThreshold) {
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+
+            showImage(currentIndex);
+        }
+
+        images[currentIndex].classList.add('active');
+
+        const imageStack = document.querySelector('.image-stack');
+        const hammer = new Hammer(imageStack);
+        hammer.on('swipe', handleTouchEnd);
+        imageStack.addEventListener('touchstart', handleTouchStart);
+        imageStack.addEventListener('touchend', handleTouchEnd);
+    </script>
+</body>
+
+</html>
