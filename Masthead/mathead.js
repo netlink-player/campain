@@ -1,4 +1,5 @@
-var body = document.querySelector("body");
+var body = document.body;
+console.log(body);
 
 var cssMathead = document.createElement("link");
 cssMathead.href =
