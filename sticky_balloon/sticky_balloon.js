@@ -109,9 +109,9 @@ var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
       muteButton.innerHTML = "&#x1F507;";
     }
   });
-  hiddenbtn.addEventListener("click", function () {
+  hiddenButton.addEventListener("click", function () {
     videoElement.classList.add("tranform_video");
     muteButton.style.display = "none";
-    hiddenbtn.style.display = "none";
+    hiddenButton.style.display = "none";
   });
 };
