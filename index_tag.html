@@ -8,7 +8,7 @@
       async
       src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
     ></script>
-    <script>
+    <!-- <script>
       window.googletag = window.googletag || { cmd: [] };
       googletag.cmd.push(function () {
         googletag
@@ -21,12 +21,29 @@
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
+    </script> -->
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag
+          .defineOutOfPageSlot(
+            "/22486823495/masthead_campain",
+            "div-gpt-ad-1702291138095-0"
+          )
+          .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
     </script>
   </head>
   <body>
     <!-- /22486823495/masthead_campain -->
     <!-- /22486823495/masthead_campain -->
-    <div id="div-gpt-ad-1702285897080-0">
+    <!-- <div id="div-gpt-ad-1702285897080-0">
       <script>
         googletag.cmd.push(function () {
           googletag.display("div-gpt-ad-1702285897080-0");
@@ -34,6 +51,15 @@
 
         // var firstBodyElement = document.body;
         // console.log(firstBodyElement);
+      </script>
+    </div> -->
+
+    <!-- /22486823495/masthead_campain -->
+    <div id="div-gpt-ad-1702291138095-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1702291138095-0");
+        });
       </script>
     </div>
   </body>
