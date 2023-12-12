@@ -83,12 +83,13 @@ var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
   hiddenButton.id = "hiddenbtn";
   hiddenButton.className = "hiddenbtn";
   var hiddenImg = document.createElement("img");
-  hiddenImg.src = "btnout.png";
+  hiddenImg.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/sticky_balloon/btnout.png";
   hiddenImg.style.height = "25px";
   hiddenButton.appendChild(hiddenImg);
 
   // Chèn các phần tử vào trong phần tử
-  var stickBalloon = document.createElement("stickballoon");
+  var stickBalloon = document.createElement("div");
+  stickBalloon.id = "stickballoon";
   stickBalloon.appendChild(linkElement);
   stickBalloon.appendChild(muteButton);
   stickBalloon.appendChild(hiddenButton);
