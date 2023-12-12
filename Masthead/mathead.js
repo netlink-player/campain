@@ -3,7 +3,7 @@ var MastheadNetlink = function (imgMathead_src, aMathead_src) {
 //   console.log(body);
 
   var cssMathead = document.createElement("link");
-  cssMathead.href =
+  cssMathead.href = 
     "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/Masthead/masthead.css";
   cssMathead.rel = "stylesheet";
   body.appendChild(cssMathead);
@@ -19,5 +19,5 @@ var MastheadNetlink = function (imgMathead_src, aMathead_src) {
   aMathead.appendChild(imgMathead);
   classMathead.appendChild(aMathead);
 
-  body.appendChild(classMathead);
+  body.insertBefore(classMathead, body.firstChild);
 };
