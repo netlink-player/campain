@@ -96,21 +96,21 @@ var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
 
   body.appendChild(stickBalloon);
 
-  var video = document.getElementById("video_balloon");
-  var muteButton = document.getElementById("muteButton");
-  var hiddenbtn = document.getElementById("hiddenbtn");
+  // var video = document.getElementById("video_balloon");
+  // var muteButton = document.getElementById("muteButton");
+  // var hiddenbtn = document.getElementById("hiddenbtn");
 
   muteButton.addEventListener("click", function () {
-    if (video.muted) {
-      video.muted = false;
+    if (videoElement.muted) {
+      videoElement.muted = false;
       muteButton.innerHTML = "&#x1F50A;";
     } else {
-      video.muted = true;
+      videoElement.muted = true;
       muteButton.innerHTML = "&#x1F507;";
     }
   });
   hiddenbtn.addEventListener("click", function () {
-    video.classList.add("tranform_video");
+    videoElement.classList.add("tranform_video");
     muteButton.style.display = "none";
     hiddenbtn.style.display = "none";
   });
