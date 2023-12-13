@@ -15,6 +15,7 @@ var MobileInPageNetlink = function (
     z-index: 100000;
     text-align: center;
     opacity: 0;
+    display: none;
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
@@ -41,7 +42,7 @@ var MobileInPageNetlink = function (
     top: 10px;
     right: 10px;
     z-index: 999;
-    font-size: 20px;
+    font-size: 20px !important;
     background: yellow;
     border: none;
     border-radius: 20%;
@@ -95,12 +96,13 @@ var MobileInPageNetlink = function (
   body.appendChild(styleElement);
   body.appendChild(mobileinpageElement);
 
-  if (window.innerWidth >= 768) {
-    mobileinpageElement.style.display = "none";
+  if (window.innerWidth <= 768) {
+    mobileinpageElement.style.display = "block";
+    setTimeout(function () {
+      mobileinpageElement.style.opacity = "1";
+    }, 1000);
   }
-  setTimeout(function () {
-    mobileinpageElement.style.opacity = "1";
-  }, 1000);
+
   window.addEventListener("scroll", function () {
     mobileinpageElement.style.height = window.innerHeight + "px";
   });
