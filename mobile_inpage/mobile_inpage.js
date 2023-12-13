@@ -45,6 +45,7 @@ var MobileInPageNetlink = function (
     font-size: 20px !important;
     background: yellow;
     border: none;
+    padding: 1%;
     border-radius: 20%;
     cursor: pointer;
   }
@@ -97,10 +98,11 @@ var MobileInPageNetlink = function (
   body.appendChild(mobileinpageElement);
 
   if (window.innerWidth <= 768) {
-    mobileinpageElement.style.display = "block";
+    mobileinpageElement.style.setProperty("display", "block", "important");
     setTimeout(function () {
       mobileinpageElement.style.opacity = "1";
     }, 1000);
+    console.log(window.innerWidth);
   }
 
   window.addEventListener("scroll", function () {
