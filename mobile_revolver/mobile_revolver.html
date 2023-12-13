@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      .mobile_revolver {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        text-align: center;
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      #imageRevolver {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .imageRevolver-tranform {
+        animation-name: imageRevolverslideDown;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes imageRevolverslideDown {
+        from {
+          transform: translateY(0%);
+        }
+        to {
+          transform: translateY(100%);
+        }
+      }
+
+      #imagebtRevolverContainer {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+      }
+      #imagebtRevolver {
+        width: 300px !important;
+        height: 300px !important;
+      }
+      @keyframes imagebtRevolver-move {
+        0% {
+          transform: translate(-50%, 0%);
+        }
+        100% {
+          transform: translate(-50%, -50%);
+        }
+      }
+      @keyframes imagebtRevolver-rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #mobileRevolver-deletebtn {
+        position: absolute;
+        right: 10px;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20%;
+        cursor: pointer;
+        bottom: 100px;
+        opacity: 0;
+      }
+      #mobileRevolver-deletebtn img {
+        height: 20px !important;
+        width: 20px !important;
+      }
+      .mobileRevolver-deletebtn-tranform {
+        animation-name: btnDelete;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      @keyframes btnDelete {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <div style="height: 1000px; background-color: red"></div>
+    <!-- <div class="mobile_revolver" id="mobileinpageElement">
+      <a href="https://netlink.vn/"
+        ><img
+          id="imageRevolver"
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/image.jpg"
+          alt="Hình ảnh"
+        />
+      </a>
+      <a href="https://netlink.vn/">
+        <div id="imagebtRevolverContainer">
+          <img
+            id="imagebtRevolver"
+            src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_revolver/circle.png"
+            alt="Hình ảnh"
+          />
+        </div>
+      </a>
+      <button id="mobileRevolver-deletebtn">
+        <img
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_revolver/close.png"
+        />
+      </button> -->
+    <!-- </div> -->
+    <script src="mobile_revolver.js"></script>
+    <script>
+      new MobileRevolverNetlink(
+        "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/image.jpg",
+        "circle.png",
+        "https://netlink.vn/"
+      );
+    </script>
+    <div style="height: 1000px; background-color: yellow"></div>
+
+    <!-- <script>
+      var mobileinpageElement = document.getElementById("mobileinpageElement");
+      var btndeltete = document.getElementById("mobileRevolver-deletebtn");
+      var imageRevolver = document.getElementById("imageRevolver");
+      var imageContainer = document.getElementById("imagebtRevolverContainer");
+      var imagebtRevolver = document.getElementById("imagebtRevolver");
+      if (window.innerWidth <= 768) {
+        mobileinpageElement.style.setProperty("display", "block", "important");
+        setTimeout(function () {
+          mobileinpageElement.style.opacity = "1";
+          setTimeout(() => {
+            handeleRevolver();
+          }, 1000);
+        }, 1000);
+      } else {
+        mobileinpageElement.style.setProperty("display", "none", "important");
+      }
+
+      window.addEventListener("scroll", function () {
+        mobileinpageElement.style.height = window.innerHeight + "px";
+      });
+
+      btndeltete.addEventListener("click", () => {
+        mobileinpageElement.style.display = "none";
+      });
+
+      function handeleRevolver() {
+        setTimeout(function () {
+          imageRevolver.classList.add("imageRevolver-tranform");
+          imageContainer.style.animation =
+            "imagebtRevolver-move 2s ease-in-out forwards";
+          btndeltete.classList.add("mobileRevolver-deletebtn-tranform");
+          setTimeout(function () {
+            imagebtRevolver.style.animation =
+              "imagebtRevolver-rotate 5s infinite ease-in-out";
+          }, 2500);
+        }, 1000);
+      }
+    </script> -->
+  </body>
+</html>

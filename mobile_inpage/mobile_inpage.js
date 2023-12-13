@@ -37,17 +37,18 @@ var MobileInPageNetlink = function (
     max-width: 100%;
     max-height: 100%;
   }
-  .delete-button {
+  .mobileInpage-deletebtn {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 999;
-    font-size: 20px !important;
-    background: yellow;
-    border: none;
-    padding: 1%;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 20%;
     cursor: pointer;
+  }
+  .mobileInpage-deletebtn img {
+    height: 20px !important;
+    width: 20px !important;
   }
   @keyframes fadeIn {
     from {
@@ -86,8 +87,11 @@ var MobileInPageNetlink = function (
   // Tạo nút xóa
   var btndeltete = document.createElement("button");
   btndeltete.id = "btndeltete";
-  btndeltete.classList.add("delete-button");
-  btndeltete.innerHTML = "&#10005;";
+  btndeltete.classList.add("mobileInpage-deletebtn");
+
+  var imgbtndeltete = document.createElement("img");
+  imgbtndeltete.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/close.png";
+  btndeltete.appendChild(imgbtndeltete);
 
   mobileinpageElement.appendChild(linkElement);
   mobileinpageElement.appendChild(video);
@@ -103,6 +107,8 @@ var MobileInPageNetlink = function (
       mobileinpageElement.style.opacity = "1";
     }, 1000);
     console.log(window.innerWidth);
+  } else {
+    mobileinpageElement.style.setProperty("display", "none", "important");
   }
 
   window.addEventListener("scroll", function () {
