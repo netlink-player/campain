@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .mobile_pull {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        text-align: center;
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      #imagePull {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateY(100%);
+      }
+      .imagePull-tranform {
+        animation-name: imagePullslideDown;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes imagePullslideDown {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0%);
+        }
+      }
+
+      #imagebtPullContainer {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        animation: imagebtPull-move 2s ease-in-out forwards;
+      }
+      #imagebtPull {
+        width: 300px !important;
+        height: auto !important;
+      }
+      @keyframes imagebtPull-move {
+        0% {
+          transform: translate(-50%, 0%);
+        }
+        100% {
+          transform: translate(-50%, -100%);
+        }
+      }
+      @keyframes imagebtPull-remove {
+        0% {
+          transform: translate(-50%, -100%);
+        }
+        100% {
+          transform: translate(-50%, 0%);
+        }
+      }
+
+      #mobileRevolver-deletebtn {
+        position: absolute;
+        right: 10px;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20%;
+        cursor: pointer;
+        bottom: 3%;
+        right: 2%;
+        opacity: 0;
+        animation: btnDelete 2s ease-in-out forwards;
+      }
+      #mobileRevolver-deletebtn img {
+        height: 20px !important;
+        width: 20px !important;
+      }
+      @keyframes btnDelete {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* //----------------------- */
+      #scrollButton {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        bottom: 15%;
+        height: 40px;
+        width: 40px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 100%;
+        cursor: pointer;
+        opacity: 0;
+        animation: bounce 2s infinite forwards;
+        transition: all 0.2s ease-in;
+      }
+      #scrollButton img {
+        height: 20px !important;
+        width: 20px !important;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translate(-50%, 0);
+        }
+        40% {
+          transform: translate(-50%, -10px);
+        }
+        60% {
+          transform: translate(-50%, -5px);
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div style="height: 1000px; background-color: red"></div>
+    <script src="mobile_pull.js"></script>
+    <script>
+      new MobilePullNetlink("mobile_pull.png", "mobilebt_pull.png", "");
+    </script>
+    <!-- <div class="mobile_pull" id="mobileinpageElement">
+      <a href="https://netlink.vn/"
+        ><img id="imagePull" src="mobile_pull.png" alt="Hình ảnh" />
+      </a>
+      <a href="https://netlink.vn/">
+        <div id="imagebtPullContainer">
+          <img id="imagebtPull" src="mobilebt_pull.png" alt="Hình ảnh" />
+        </div>
+      </a>
+      <button id="mobileRevolver-deletebtn">
+        <img
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_pull/close.png"
+        />
+      </button>
+      <button id="scrollButton">
+        <img src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_pull/uparrow.png" />
+      </button>
+    </div> -->
+
+    <div style="height: 1000px; background-color: yellow"></div>
+    <script>
+      //   var mobileinpageElement = document.getElementById("mobileinpageElement");
+      //   var btndeltete = document.getElementById("mobileRevolver-deletebtn");
+      //   var imagePull = document.getElementById("imagePull");
+      //   var imageContainer = document.getElementById("imagebtPullContainer");
+      //   var imagebtPull = document.getElementById("imagebtPull");
+      //   var btnscroll = document.getElementById("scrollButton");
+      //   if (window.innerWidth <= 768) {
+      //     mobileinpageElement.style.setProperty("display", "block", "important");
+      //     setTimeout(function () {
+      //       btnscroll.classList.add("scroll-up-bounce");
+      //       btnscroll.style.opacity = 1;
+      //     }, 2500);
+      //   } else {
+      //     mobileinpageElement.style.setProperty("display", "none", "important");
+      //   }
+      //   window.addEventListener("scroll", function () {
+      //     mobileinpageElement.style.height = window.innerHeight + "px";
+      //   });
+      //   btndeltete.addEventListener("click", () => {
+      //     mobileinpageElement.style.display = "none";
+      //   });
+      //   btnscroll.addEventListener("click", () => {
+      //     setTimeout(function () {
+      //       imagePull.classList.add("imagePull-tranform");
+      //     }, 1000);
+      //     imageContainer.style.animation =
+      //       "imagebtPull-remove 1s ease-in-out forwards";
+      //     btnscroll.style.opacity = 0;
+      //   });
+    </script>
+  </body>
+</html>

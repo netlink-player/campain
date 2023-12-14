@@ -117,5 +117,6 @@ var MobileInPageNetlink = function (
 
   btndeltete.addEventListener("click", () => {
     mobileinpageElement.style.display = "none";
+    video.muted = true;
   });
 };
