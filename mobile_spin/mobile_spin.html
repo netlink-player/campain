@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .mobile_spin {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        text-align: center;
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      #imageSpin {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .imageSpin-opacity {
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes imageSpinslideDown {
+        from {
+          transform: translateY(0%);
+        }
+        to {
+          transform: translateY(100%);
+        }
+      }
+
+      #imagebtSpinContainer {
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        z-index: 999;
+        animation: imagebtSpinContainer-move 1s ease-in-out forwards;
+        transform: translate(-50%, 0%);
+      }
+      #imagebtSpin {
+        width: 300px !important;
+        height: 300px !important;
+        transition: transform 1s ease-in-out;
+      }
+      @keyframes imagebtSpinContainer-move {
+        0% {
+          transform: translate(-50%, 0%);
+        }
+        100% {
+          transform: translate(-50%, -50%);
+        }
+      }
+      #mobileRevolver-deletebtn {
+        position: absolute;
+        right: 10px;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20%;
+        cursor: pointer;
+        bottom: 100px;
+        opacity: 0;
+      }
+      #mobileRevolver-deletebtn img {
+        height: 20px !important;
+        width: 20px !important;
+      }
+      .mobileRevolver-deletebtn-tranform {
+        animation-name: btnDelete;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      @keyframes btnDelete {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div style="height: 1000px; background-color: red"></div>
+    <script src="mobile_spin.js"></script>
+    <script>
+      new MobileSpinNetlink(
+        [
+          "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_pull/mobile_pull.png",
+          "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/image.jpg",
+        ],
+        "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_revolver/circle.png",
+        ""
+      );
+    </script>
+    <!-- <div class="mobile_spin" id="mobilespinElement">
+      <a href="https://netlink.vn/"
+        ><img
+          id="imageSpin"
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/image.jpg"
+          alt="Hình ảnh"
+        />
+      </a>
+
+      <div id="imagebtSpinContainer">
+        <img
+          id="imagebtSpin"
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_revolver/circle.png"
+          alt="Hình ảnh"
+        />
+      </div>
+
+      <button id="mobileRevolver-deletebtn">
+        <img
+          src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_spin/close.png"
+        />
+      </button>
+    </div> -->
+    <div style="height: 1000px; background-color: yellow"></div>
+
+    <script>
+      // var mobilespinElement = document.getElementById("mobilespinElement");
+      // var btndeltete = document.getElementById("mobileRevolver-deletebtn");
+      // var imageSpin = document.getElementById("imageSpin");
+      // var imageContainer = document.getElementById("imagebtSpinContainer");
+      // var imagebtSpin = document.getElementById("imagebtSpin");
+      // if (window.innerWidth <= 768) {
+      //   mobilespinElement.style.setProperty("display", "block", "important");
+
+      //   handeleRevolver();
+      //   setTimeout(function () {
+      //     //   mobilespinElement.style.opacity = "1";
+      //   }, 1000);
+      // } else {
+      //   mobilespinElement.style.setProperty("display", "none", "important");
+      // }
+
+      // window.addEventListener("scroll", function () {
+      //   mobilespinElement.style.height = window.innerHeight + "px";
+      // });
+
+      // btndeltete.addEventListener("click", () => {
+      //   mobilespinElement.style.display = "none";
+      // });
+
+      // function handeleRevolver() {
+      //   setTimeout(function () {
+      //     btndeltete.classList.add("mobileRevolver-deletebtn-tranform");
+      //   }, 1000);
+      // }
+
+      // var startX, startY;
+      // var minDistance = 50;
+      // var isSwiping = false;
+      // let rotation = 0;
+      // let index_image = 0;
+      // var arr_image = [
+      //   "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_pull/mobile_pull.png",
+      //   "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_inpage/image.jpg",
+      // ];
+      // function getImage() {
+      //   imageSpin.src = arr_image[index_image];
+      //   imagebtSpin.style.transform = `rotate(${rotation}deg)`;
+      //   imageSpin.classList.add("imageSpin-opacity");
+      //   setTimeout(() => {
+      //     imageSpin.classList.remove("imageSpin-opacity");
+      //   }, 1000);
+      //   index_image++;
+      //   if (index_image >= arr_image.length) {
+      //     index_image = 0; // Quay vòng trở lại phần tử đầu tiên
+      //   }
+      // }
+
+      // imagebtSpin.addEventListener("mousedown", function (event) {
+      //   startX = event.pageX;
+      //   startY = event.pageY;
+      //   isSwiping = false;
+      //   rotation += 90;
+      //   getImage();
+      // });
+      // imagebtSpin.addEventListener("mousemove", function (event) {
+      //   if (!isSwiping) {
+      //     var deltaX = Math.abs(event.pageX - startX);
+      //     var deltaY = Math.abs(event.pageY - startY);
+      //     if (deltaX >= minDistance || deltaY >= minDistance) {
+      //       isSwiping = true;
+
+      //       console.log("2");
+      //     }
+      //   }
+      // });
+      // imagebtSpin.addEventListener("mouseup", function (event) {
+      //   console.log("2");
+      // });
+      // imagebtSpin.addEventListener("mouseleave", function (event) {
+      //   console.log("3");
+      // });
+    </script>
+  </body>
+</html>

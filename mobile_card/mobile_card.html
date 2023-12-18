@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-
-    </style>
-</head>
-<style>
-    .image-stack {
+      .image-slider {
         position: relative;
-        width: 200px;
-        /* Định kích thước phù hợp */
-        height: 300px;
-        /* Định kích thước phù hợp */
+        width: 300px;
+        height: 200px;
         overflow: hidden;
-    }
+      }
 
-    .image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+      .image-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .image {
+        flex: 0 0 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
+      }
 
-    .image.active {
+      .image.active {
         opacity: 1;
-    }
-</style>
+      }
 
-<body>
-    <div class="image-stack">
-        <img src="image1.jfif" alt="Image 1" class="image">
-        <img src="image2.jfif" alt="Image 2" class="image">
-        <img src="image1.jpg" alt="Image 3" class="image">
+      #myElement {
+        cursor: all-scroll;
+        /* background-color: blue; */
+        transition: background-color 0.3s;
+      }
+
+      #myElement.swiped {
+        /* background-color: red; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-slider" id="myElement">
+      <div class="image-container">
+        <img src="image1.jpg" alt="Image 1" class="image active" />
+        <img src="image2.jpg" alt="Image 2" class="image" />
+        <img src="image3.jpg" alt="Image 3" class="image" />
+        <img src="image4.jpg" alt="Image 4" class="image" />
+      </div>
     </div>
+
     <script>
-        const images = document.querySelectorAll('.image');
-        let currentIndex = 0;
-        let touchStartX = 0;
-        const swipeThreshold = 50;
+      const imageContainer = document.querySelector(".image-container");
+      const images = document.querySelectorAll(".image");
+      let currentIndex = 0;
 
-        function showImage(index) {
-            images.forEach(image => {
-                image.classList.remove('active');
-            });
+      function showImage(index) {
+        imageContainer.style.transform = `translateX(-${index * 100}%)`;
+        images.forEach((image, i) => {
+          if (i === index) {
+            image.classList.add("active");
+          } else {
+            image.classList.remove("active");
+          }
+        });
+      }
 
-            images[index].classList.add('active');
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+      var myElement = document.getElementById("myElement");
+      var startX, startY;
+      var minDistance = 50;
+      var isSwiping = false;
+
+      myElement.addEventListener("mousedown", function (event) {
+        startX = event.pageX;
+        startY = event.pageY;
+        isSwiping = false;
+      });
+      myElement.addEventListener("mousemove", function (event) {
+        if (!isSwiping) {
+          var deltaX = Math.abs(event.pageX - startX);
+          var deltaY = Math.abs(event.pageY - startY);
+          if (deltaX >= minDistance || deltaY >= minDistance) {
+            isSwiping = true;
+            myElement.classList.add("swiped");
+            nextImage();
+          }
         }
-
-        function handleTouchStart(event) {
-            touchStartX = event.touches[0].clientX;
-        }
-
-        function handleTouchEnd(event) {
-            const touchEndX = event.changedTouches[0].clientX;
-            const touchDiff = touchEndX - touchStartX;
-
-            if (touchDiff > swipeThreshold) {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-            } else if (touchDiff < -swipeThreshold) {
-                currentIndex = (currentIndex + 1) % images.length;
-            }
-
-            showImage(currentIndex);
-        }
-
-        images[currentIndex].classList.add('active');
-
-        const imageStack = document.querySelector('.image-stack');
-        const hammer = new Hammer(imageStack);
-        hammer.on('swipe', handleTouchEnd);
-        imageStack.addEventListener('touchstart', handleTouchStart);
-        imageStack.addEventListener('touchend', handleTouchEnd);
+      });
+      myElement.addEventListener("mouseup", function (event) {
+        myElement.classList.remove("swiped");
+      });
+      myElement.addEventListener("mouseleave", function (event) {
+        myElement.classList.remove("swiped");
+      });
     </script>
-</body>
-
+  </body>
 </html>
