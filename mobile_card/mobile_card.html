@@ -5,96 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .image-slider {
+      .slideshow {
         position: relative;
-        width: 300px;
-        height: 200px;
         overflow: hidden;
+        width: 300px;
+        height: 300px;
       }
 
-      .image-container {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-
-      .image {
-        flex: 0 0 100%;
-        height: 100%;
+      .slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
         opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
       }
 
-      .image.active {
+      .slideshow img.active {
         opacity: 1;
-      }
-
-      #myElement {
-        cursor: all-scroll;
-        /* background-color: blue; */
-        transition: background-color 0.3s;
-      }
-
-      #myElement.swiped {
-        /* background-color: red; */
+        transform: scale(1);
       }
     </style>
   </head>
   <body>
-    <div class="image-slider" id="myElement">
-      <div class="image-container">
-        <img src="image1.jpg" alt="Image 1" class="image active" />
-        <img src="image2.jpg" alt="Image 2" class="image" />
-        <img src="image3.jpg" alt="Image 3" class="image" />
-        <img src="image4.jpg" alt="Image 4" class="image" />
-      </div>
+    <div class="slideshow">
+      <img src="image1.jpg" alt="Image 1" />
+      <img src="image2.jpg" alt="Image 2" />
+      <img src="image3.jpg" alt="Image 3" />
     </div>
 
     <script>
-      const imageContainer = document.querySelector(".image-container");
-      const images = document.querySelectorAll(".image");
+      const images = document.querySelectorAll(".slideshow img");
       let currentIndex = 0;
 
       function showImage(index) {
-        imageContainer.style.transform = `translateX(-${index * 100}%)`;
-        images.forEach((image, i) => {
-          if (i === index) {
-            image.classList.add("active");
-          } else {
-            image.classList.remove("active");
-          }
+        images.forEach((image) => {
+          image.classList.remove("active");
         });
+        images[index].classList.add("active");
       }
 
-      function nextImage() {
+      function nextSlide() {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       }
-      var myElement = document.getElementById("myElement");
-      var startX, startY;
-      var minDistance = 50;
-      var isSwiping = false;
 
-      myElement.addEventListener("mousedown", function (event) {
-        startX = event.pageX;
-        startY = event.pageY;
-        isSwiping = false;
-      });
-      myElement.addEventListener("mousemove", function (event) {
-        if (!isSwiping) {
-          var deltaX = Math.abs(event.pageX - startX);
-          var deltaY = Math.abs(event.pageY - startY);
-          if (deltaX >= minDistance || deltaY >= minDistance) {
-            isSwiping = true;
-            myElement.classList.add("swiped");
-            nextImage();
-          }
-        }
-      });
-      myElement.addEventListener("mouseup", function (event) {
-        myElement.classList.remove("swiped");
-      });
-      myElement.addEventListener("mouseleave", function (event) {
-        myElement.classList.remove("swiped");
-      });
+      // Chuyển đổi ảnh sau mỗi 3 giây
+      setInterval(nextSlide, 3000);
     </script>
   </body>
 </html>
