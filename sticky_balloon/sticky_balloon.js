@@ -1,6 +1,55 @@
-var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
+var StickyBalloonNetlink = function (
+  isStickyLeft,
+  video_balloon_src,
+  aBallon_src
+) {
   //body
   var body = window.top.document.querySelector("body");
+
+  var cssStickyBallonLeft = `
+#stickballoon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000000;
+}
+#video_balloon {
+  position: absolute;
+  border-radius: 20px;
+  bottom: 20px;
+  left: 20px;
+  height: 300px;
+  width: 150px;
+  object-fit: cover !important;
+}
+.tranform_video {
+  border-radius: 50% !important;
+  height: 80px !important;
+  width: 80px !important;
+  
+}
+.mutebtn {
+  position: absolute;
+  bottom: 30px;
+  font-size: 20px;
+  left: 130px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: none;
+  cursor: pointer;
+}
+.hiddenbtn {
+  position: absolute;
+  bottom: 280px;
+  left: 20px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: none;
+  cursor: pointer;
+}
+`;
 
   var cssStickyBallon = `
 #stickballoon {
@@ -48,8 +97,12 @@ var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
 `;
 
   var styleElement = document.createElement("style");
-  styleElement.innerHTML = cssStickyBallon;
 
+  if (isStickyLeft) {
+    styleElement.innerHTML = cssStickyBallonLeft;
+  } else {
+    styleElement.innerHTML = cssStickyBallon;
+  }
   body.appendChild(styleElement);
 
   // Tạo phần tử video
@@ -83,7 +136,8 @@ var StickyBalloonNetlink = function (video_balloon_src, aBallon_src) {
   hiddenButton.id = "hiddenbtn";
   hiddenButton.className = "hiddenbtn";
   var hiddenImg = document.createElement("img");
-  hiddenImg.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/sticky_balloon/btnout.png";
+  hiddenImg.src =
+    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/sticky_balloon/btnout.png";
   hiddenImg.style.height = "25px";
   hiddenButton.appendChild(hiddenImg);
 

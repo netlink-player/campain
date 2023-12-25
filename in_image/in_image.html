@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masthead Full</title>
+    <style>
+      @charset "utf-8";
+      body {
+        background-color: #ececec;
+      }
+
+      .masthead {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .masthead iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      img,
+      object,
+      embed,
+      video {
+        max-width: 100%;
+      }
+
+      .ie6 img {
+        width: 100%;
+      }
+
+      @media (max-width: 767px) {
+        .masthead {
+          /* display: none; */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="height: 1500px; background-color: red"></div>
+    <a href="https://netlink.vn/"
+      ><img
+        src="https://www.elle.vn/wp-content/uploads/2019/07/07/margaret-river-730x400.jpg"
+        alt="masthead"
+        style="height: 100%"
+    /></a>
+
+    <a href="https://netlink.vn/"
+      ><img
+        src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/Masthead/video_netlink-cut.gif"
+        alt="masthead"
+    /></a>
+
+    <script type="text/javascript">
+      //   new MastheadFullNetlink(
+      //     "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/Masthead/video_netlink-cut.gif",
+      //     "https://netlink.vn/"
+      //   );
+
+      var images = document.querySelectorAll("img");
+      console.log(images[0].src);
+      var newImage = document.createElement("img");
+      newImage.src = "image_bgr_coca.png";
+
+      var container = document.createElement("div");
+      container.style.position = "relative";
+      container.style.display = "inline-block";
+      container.style.width = images[0].width + "px";
+      container.style.height = images[0].height + "px";
+
+      newImage.style.position = "absolute";
+      newImage.style.left = "50%";
+      //   newImage.style.bottom = "0";
+      newImage.style.transform = "translateX(-50%)";
+      newImage.style.zIndex = 999;
+      newImage.style.width = images[0].width + "px";
+      newImage.style.height = images[0].height + "px";
+
+      // Chèn hình ảnh đầu tiên và hình ảnh mới vào container
+      container.appendChild(images[0].cloneNode(true));
+      container.appendChild(newImage);
+      // Chèn hình ảnh đầu tiên và hình ảnh mới vào container
+
+      images[0].parentNode.replaceChild(container, images[0]);
+    </script>
+    <div style="height: 1500px; background-color: yellow"></div>
+  </body>
+</html>
