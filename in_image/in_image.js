@@ -1,4 +1,4 @@
-var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb) {
+var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   var _body = window.top.document.querySelector("body");
 
   var _image = _intimage;
@@ -40,7 +40,7 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb) {
     "important"
   );
   newImage.style.setProperty("height", "auto", "important");
-  newImage.style.setProperty("bottom", "0", "important");
+  newImage.style.setProperty("bottom", _btpx + "px", "important");
 
   newImage.style.animationName = "slideUp";
   newImage.style.animationDuration = "0.5s";
@@ -99,8 +99,19 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb) {
   elmNetlinkAfter.style.position = "relative";
   elmNetlinkAfter.src = _srcytb;
   elmNetlinkAfter.style.zIndex = 999;
-  elmNetlinkAfter.style.width = images[_image].width + "px";
-  elmNetlinkAfter.style.height = images[_image].height + "px";
+  elmNetlinkAfter.style.setProperty(
+    "width",
+    images[_image].width + "px",
+    "important"
+  );
+  elmNetlinkAfter.style.setProperty(
+    "height",
+    images[_image].height + "px",
+    "important"
+  );
+  elmNetlinkAfter.style.setProperty("display", "inline", "important");
+  // elmNetlinkAfter.style.width = images[_image].width + "px";
+  // elmNetlinkAfter.style.height = images[_image].height + "px";
   elmNetlinkAfter.style.padding = "30px 0px 30px 0px";
   elmNetlinkAfter.setAttribute(
     "allow",
