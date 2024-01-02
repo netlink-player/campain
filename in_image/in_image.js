@@ -7,8 +7,19 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb) {
   var container_small = document.createElement("div");
   container_larg.style.position = "relative";
   container_larg.style.display = "inline-block";
-  container_larg.style.width = images[_image].width + "px";
-  container_larg.style.height = images[_image].height + "px";
+
+  container_larg.style.setProperty(
+    "width",
+    images[_image].width + "px",
+    "important"
+  );
+  container_larg.style.setProperty(
+    "height",
+    images[_image].height + "px",
+    "important"
+  );
+  // container_larg.style.width = images[_image].width + "px";
+  // container_larg.style.height = images[_image].height + "px";
 
   //new banner
   var newImage = document.createElement("img");
