@@ -594,9 +594,35 @@
       </script>
     </div>
 
-    <!-- Mobile First View -->
+    <!-- Mobile spin View -->
     <script>
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
+        window.googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(function () {
+          googletag
+            .defineSlot(
+              "/22486823495/mobileSpin_campain",
+              [1, 1],
+              "div-gpt-ad-1702867590167-0"
+            )
+            .addService(googletag.pubads());
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+        });
+      }
+    </script>
+    <!-- /22486823495/mobileSpin_campain -->
+    <div id="div-gpt-ad-1702867590167-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1702867590167-0");
+        });
+      </script>
+    </div>
+
+    <!-- Mobile First View -->
+    <!-- <script>
+      if (window.innerWidth >= 768) {
         window.googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(function () {
           googletag
@@ -611,39 +637,14 @@
         });
       }
     </script>
-    <!-- Mobile First View -->
     <div id="div-gpt-ad-1702432884683-0">
       <script>
         googletag.cmd.push(function () {
           googletag.display("div-gpt-ad-1702432884683-0");
         });
       </script>
-    </div>
+    </div> -->
 
-   <!-- In-image -->
-    <script>
-        window.googletag = window.googletag || { cmd: [] };
-        googletag.cmd.push(function () {
-          googletag
-            .defineSlot(
-              "/22486823495/in_imgaejs_video",
-              [1, 1],
-              "div-gpt-ad-1704169053775-0"
-            )
-            .addService(googletag.pubads());
-          googletag.pubads().enableSingleRequest();
-          googletag.enableServices();
-        });
-      </script>
-  
-      <!-- /22486823495/in_imgaejs_video -->
-      <div id="div-gpt-ad-1704169053775-0">
-        <script>
-          googletag.cmd.push(function () {
-            googletag.display("div-gpt-ad-1704169053775-0");
-          });
-        </script>
-      </div>
     <!-- saxon_topline_display -->
     <div class="header-topline-wrapper">
       <div class="container">
@@ -666,8 +667,6 @@
       </div>
     </div>
     <!-- saxon_top_display -->
-
-    <!-- show-menu-mobile -->
 
     <section id="section-main-menu" class="is-pc">
       <div class="container">
@@ -1134,32 +1133,33 @@
                         </p>
                         <!-- Mobile Inpage -->
                         <script>
-                          if (window.innerWidth < 768) {
-                            window.googletag = window.googletag || { cmd: [] };
-                            googletag.cmd.push(function () {
-                              googletag
-                                .defineSlot(
-                                  "/22486823495/300x250_mouseover_campaign",
-                                  [300, 250],
-                                  "div-gpt-ad-1701053213743-0"
-                                )
-                                .addService(googletag.pubads());
-                              googletag.pubads().enableSingleRequest();
-                              googletag.enableServices();
-                            });
-                          }
+                          window.googletag = window.googletag || { cmd: [] };
+                          googletag.cmd.push(function () {
+                            googletag
+                              .defineSlot(
+                                "/22486823495/300x250_mouseover_campaign",
+                                [300, 250],
+                                "div-gpt-ad-1701053213743-0"
+                              )
+                              .addService(googletag.pubads());
+                            googletag.pubads().enableSingleRequest();
+                            googletag.enableServices();
+                          });
                         </script>
                         <!-- /22486823495/300x250_mouseover_campaign -->
-                        <div
-                          id="div-gpt-ad-1701053213743-0"
-                          style="min-width: 300px; min-height: 250px"
-                        >
-                          <script>
-                            googletag.cmd.push(function () {
-                              googletag.display("div-gpt-ad-1701053213743-0");
-                            });
-                          </script>
-                        </div>
+                        <center>
+                          <div
+                            id="div-gpt-ad-1701053213743-0"
+                            style="min-width: 300px; min-height: 250px"
+                          >
+                            <script>
+                              googletag.cmd.push(function () {
+                                googletag.display("div-gpt-ad-1701053213743-0");
+                              });
+                            </script>
+                          </div>
+                        </center>
+
                         <p>
                           Tuy nhiên, thời gian gần đây đã có khá nhiều thay đổi
                           liên quan đến vấn đề lương thưởng của làng Esports
@@ -1248,6 +1248,36 @@
                           tại LPL đã tăng vọt kể từ mùa giải 2019 nhưng đang
                           giảm dần trong 2 năm vừa qua.
                         </p>
+                        <!-- <link
+                          rel="stylesheet"
+                          href="https://cdn.jsdelivr.net/gh/netlink-player/video@master/instream.css"
+                        />
+                        <div style="display: inline">
+                          <div id="main-videoplayer">
+                            <video
+                              id="content_video"
+                              class="video-js vjs-default-skin"
+                              src="https://cdn.jsdelivr.net/gh/netlink-player/instream_netlink@master/video_netlink.mp4"
+                              preload="auto"
+                              controls="controls"
+                              height="360"
+                              width="640"
+                            ></video>
+                          </div>
+                        </div>
+
+                        <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+                        <script src="https://cdn.jsdelivr.net/gh/netlink-player/video@master/netlink-instream.js"></script>
+                        <script type="text/javascript">
+                          var ads = new Ads(
+                            [
+                              "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=http%3A%2F%2Fnetlink.vn&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&env=vp&unviewed_position_start=1&impl=s&correlator=",
+                            ],
+                            false,
+                            false,
+                            false
+                          );
+                        </script> -->
                         <p>
                           Dù Fenfen cũng như Ning đều không chia sẻ quan điểm về
                           lý do khiến mức lương của tuyển thủ LPL giảm sút,
@@ -1848,6 +1878,34 @@
         />
       </a>
     </div>
+    <!-- In-image -->
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag
+          .defineSlot(
+            "/22486823495/in_imgaejs_video",
+            [1, 1],
+            "div-gpt-ad-1704169053775-0"
+          )
+          .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+
+    <!-- /22486823495/in_imgaejs_video -->
+    <div id="div-gpt-ad-1704169053775-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1704169053775-0");
+        });
+      </script>
+    </div>
 
     <footer id="footer">
       <div class="container">
@@ -1882,9 +1940,6 @@
           </a>
           <a href="https://game4v.com.vn/tam-su-gamer" class="menu-link">
             Tâm Sự Gamer
-          </a>
-          <a href="https://game4v.com.vn/gift-code" class="menu-link">
-            Giftcode
           </a>
         </ul>
       </div>
@@ -1960,48 +2015,6 @@
       defer
       src="https://game4v.com.vn/g4v-content/themes/saxon/js/template.min.js?ver=2.1.1"
     ></script>
-    <script type="text/javascript">
-      (function ($) {
-        $(document).ready(function ($) {
-          "use strict";
-
-          $(".content-block ").on(
-            "click",
-            ".saxon-post .post-like-button",
-            function (e) {
-              e.preventDefault();
-              e.stopPropagation();
-
-              var postlikes = $(this).next(".post-like-counter").text();
-              var postid = $(this).data("id");
-
-              if (getCookie("saxon-likes-for-post-" + postid) == 1) {
-                // Already liked
-              } else {
-                setCookie("saxon-likes-for-post-" + postid, "1", 365);
-
-                $(this).children("i").attr("class", "fa fa-heart");
-
-                $(this)
-                  .next(".post-like-counter")
-                  .text(parseInt(postlikes) + 1);
-
-                var data = {
-                  action: "saxon_likes",
-                  postid: postid,
-                };
-
-                var ajaxurl = "https://game4v.com.vn/wp-admin/admin-ajax.php";
-
-                $.post(ajaxurl, data, function (response) {
-                  var wpdata = response;
-                });
-              }
-            }
-          );
-        });
-      })(jQuery);
-    </script>
   </body>
 </html>
 

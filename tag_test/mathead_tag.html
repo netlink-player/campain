@@ -24,7 +24,7 @@
     </script> -->
   </head>
   <body>
-    <div style="height: 1500px; background-color: red;"></div>
+    <div style="height: 1500px; background-color: red"></div>
     <script
       async
       src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
@@ -64,5 +64,36 @@
         });
       </script>
     </div> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/netlink-player/video@master/instream.css"
+    />
+    <div style="display: inline">
+      <div id="main-videoplayer">
+        <video
+          id="content_video"
+          class="video-js vjs-default-skin"
+          src="https://cdn.jsdelivr.net/gh/netlink-player/instream_netlink@master/video_netlink.mp4"
+          preload="auto"
+          controls="controls"
+          height="360"
+          width="640"
+        ></video>
+      </div>
+    </div>
+
+    <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/netlink-player/video@master/netlink-instream.js"></script>
+    <script type="text/javascript">
+      var ads = new Ads(
+        [
+          "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=http%3A%2F%2Fnetlink.vn&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&env=vp&unviewed_position_start=1&impl=s&correlator=",
+        ],
+        false,
+        false,
+        false
+      );
+    </script>
   </body>
 </html>
