@@ -1,0 +1,154 @@
+.aiactiv-apps-cards {
+    position: absolute;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.aiactiv-apps-card-transition {
+    transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, transform 0.3s ease;
+    -webkit-transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.aiactiv-apps-card-1 {
+    width: 80%;
+    height: 80%;
+    left: 6%;
+    top: 20%;
+    z-index: 1500;
+}
+
+.aiactiv-apps-card-2 {
+    width: 78%;
+    height: 78%;
+    left: 10%;
+    top: 20%;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    z-index: 1400;
+}
+
+.aiactiv-apps-card-3 {
+    width: 75%;
+    height: 75%;
+    left: 15%;
+    top: 20%;
+    transform: rotate(4deg);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    z-index: 1300;
+}
+
+.aiactiv-apps-card-4 {
+    width: 73%;
+    height: 73%;
+    /** Last card's position need to be same with card-move-to-left/right 100% position. */
+    left: 19%;
+    top: 20%;
+    transform: rotate(6deg);
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    z-index: 1200;
+}
+
+.aiactiv-apps-hidding-cards {
+    width: 70%;
+    height: 70%;
+    left: 17%;
+    top: 20%;
+    opacity: 0;
+    transform: rotate(6deg);
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    z-index: 1000;
+}
+
+.aiactiv-apps-out-of-screen-cards {
+    left: -200%;
+    opacity: 0;
+}
+
+.aiactiv-apps-hide-card {
+    top: 120%;
+}
+
+.aiactiv-apps-cards-follow-finger {
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+}
+
+.aiactiv-apps-moving-to-left {
+    /** IMPORTANT! animation time cannot simply change!!! */
+    animation: card-move-to-left 0.5s;
+    -webkit-animation: card-move-to-left 0.5s;
+}
+
+@keyframes card-move-to-left {
+    0% {}
+    50% {
+        left: -200%;
+    }
+    60% {
+        top: 5%;
+    }
+    100% {
+        left: 19%;
+        top: 20%;
+    }
+}
+
+@-webkit-keyframes card-move-to-left {
+    0% {}
+    50% {
+        left: -200%;
+    }
+    60% {
+        top: 5%;
+    }
+    100% {
+        left: 19%;
+        top: 20%;
+    }
+}
+
+.aiactiv-apps-moving-to-right {
+    /** IMPORTANT! animation time cannot simply change!!! */
+    animation: card-move-to-right 0.5s;
+    -webkit-animation: card-move-to-right 0.5s;
+}
+
+@keyframes card-move-to-right {
+    0% {}
+    50% {
+        left: 200%;
+    }
+    60% {
+        top: 5%;
+    }
+    100% {
+        left: 19%;
+        top: 20%;
+    }
+}
+
+@-webkit-keyframes card-move-to-right {
+    0% {}
+    50% {
+        left: 200%;
+    }
+    60% {
+        top: 5%;
+    }
+    100% {
+        left: 19%;
+        top: 20%;
+    }
+}

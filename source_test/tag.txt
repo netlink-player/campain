@@ -1,0 +1,139 @@
+//Expandable Banner
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/22486823495/300x600_ex_campaign', [300, 600], 'div-gpt-ad-1704871600776-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!-- /22486823495/300x600_ex_campaign -->
+<div id='div-gpt-ad-1704871600776-0' style='min-width: 300px; min-height: 600px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1704871600776-0'); });
+  </script>
+</div>
+
+
+
+//Masthead
+<script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag
+          .defineSlot(
+            "/22486823495/masthead_campain",
+            [1, 1],
+            "div-gpt-ad-1702285897080-0"
+          )
+          .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+    <!-- /22486823495/masthead_campain -->
+    <!-- /22486823495/masthead_campain -->
+    <div id="div-gpt-ad-1702285897080-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1702285897080-0");
+        });
+
+        // var firstBodyElement = document.body;
+        // console.log(firstBodyElement);
+      </script>
+    </div>
+
+
+
+//Mobile Inpage
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/22486823495/300x250_mouseover_campaign', [300, 250], 'div-gpt-ad-1701053213743-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!-- /22486823495/300x250_mouseover_campaign -->
+<div id='div-gpt-ad-1701053213743-0' style='min-width: 300px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1701053213743-0'); });
+  </script>
+</div>
+
+
+
+//Mobile First View
+
+<script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      if (window.innerWidth <= 768) {
+        window.googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(function () {
+          googletag
+            .defineSlot(
+              "/22486823495/mobileinpage_campain",
+              [1, 1],
+              "div-gpt-ad-1702432884683-0"
+            )
+            .addService(googletag.pubads());
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+        });
+      }
+    </script>
+    <!-- /22486823495/mobileinpage_campain -->
+    <div id="div-gpt-ad-1702432884683-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1702432884683-0");
+        });
+      </script>
+    </div>
+
+
+//Card
+
+//In-image
+
+<script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag
+          .defineSlot(
+            "/22486823495/in_imgaejs_video",
+            [1, 1],
+            "div-gpt-ad-1704169053775-0"
+          )
+          .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+
+    <!-- /22486823495/in_imgaejs_video -->
+    <div id="div-gpt-ad-1704169053775-0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1704169053775-0");
+        });
+      </script>
+    </div>
+
+//Instream 15s
+//Outstream with pop-up

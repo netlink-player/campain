@@ -1,0 +1,189 @@
+#card-container {
+    position: absolute;
+}
+
+.rounded-corner {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    overflow: hidden;
+    /* this fixes the overflow:hidden in Chrome */
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+.card-img {
+    width: 100%;
+}
+
+#aiactiv-apps-cards-skinner {
+    position: absolute;
+}
+
+.gallery_ui {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/** Shopping List */
+
+.flex-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.shopping-item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 10px 15px;
+    left: 0;
+    top: 4%;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    flex-flow: row nowrap;
+}
+
+.shopping-header {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.shopping-image {
+    display: block;
+    position: relative;
+    width: 36.3%;
+    height: 64.4%;
+    top: 22%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px 0 rgba(32, 33, 36, .28);
+    flex: 0 0 auto;
+    margin-right: 15px;
+}
+
+.shopping-context {
+    position: relative;
+    height: 90%;
+    top: 22%;
+    flex: 1 1 auto;
+    text-align: left;
+    font-family: inherit;
+    font-size: 18px;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.shopping-title {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 6px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: 0.63em;
+    line-height: 1.1em;
+    align-self: flex-start;
+    overflow: hidden;
+}
+
+.shopping-title>p {
+    width: 100%;
+    font-family: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+.shopping-sale-price {
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+    font-weight: 700;
+    padding: 0px;
+    flex-flow: row nowrap;
+    align-self: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    line-height: 0.8em;
+    color: #f57224;
+}
+
+.shopping-sale-price>.currency {
+    position: relative;
+    font-family: inherit;
+}
+
+.shopping-sale-price>.price {
+    position: relative;
+    font-family: inherit;
+}
+
+.shopping-original-price {
+    position: relative;
+    width: auto;
+    font-family: inherit;
+    text-decoration: line-through;
+    padding: 2px 5px 0px 0px;
+    flex-flow: row nowrap;
+    align-self: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 0.67em;
+    color: #999;
+}
+
+.shopping-original-price>.currency {
+    position: relative;
+    font-family: inherit;
+}
+
+.shopping-original-price>.price {
+    position: relative;
+    font-family: inherit;
+}
+
+.shopping-percentage {
+    position: relative;
+    font-family: inherit;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.67em;
+    align-self: flex-start;
+    align-items: center;
+    padding: 2px 0px;
+}
+
+.shopping-original-price.display-hide,
+.shopping-percentage.display-hide {
+    visibility: hidden !important;
+}
+
+.shopping-cta {
+    background-color: #f2b42b;
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: #89551a;
+    justify-content: center;
+    align-self: flex-start;
+    box-shadow: 0 1px 3px 0 rgba(32, 33, 36, .28);
+}

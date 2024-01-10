@@ -3,6 +3,10 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
 
   var _image = _intimage;
   var images = _body.querySelectorAll("img");
+  if (_image > images.length) {
+    _image = images.length-1;
+  }
+  console.log(images.length);
   var container_larg = document.createElement("div");
   var container_small = document.createElement("div");
   container_larg.style.position = "relative";
