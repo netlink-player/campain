@@ -25,12 +25,12 @@
     <script>
       var arfAsync = arfAsync || [];
     </script>
-    <script
+    <!-- <script
       id="arf-core-js"
       onerror="window.admerrorload=true;"
       src="//media1.admicro.vn/cms/Arf.min.js"
       async
-    ></script>
+    ></script> -->
     <title>
       LMHT: Tuyển thủ LPL than thở tiền lương giảm sút, liệu có phải vì thua LCK
       suốt nhiều mùa?
@@ -162,6 +162,10 @@
       div {
         font-family: "VideoJS" !important;
       }
+      .single-post .blog-post-single .tags a {
+        padding: 0;
+        background-color: transparent;
+      }
     </style>
     <noscript
       ><style>
@@ -222,15 +226,6 @@
           height: auto;
         }
       }
-      /*
-#div-gpt-ad-1570688106343-0{
-	display: none;
-}
-
-#none-div-gpt-ad-1570688106343-0{
-	display: none;
-}
-*/
       #banner-add-lixi88 {
         text-align: center;
         padding: 10px 0;
@@ -976,7 +971,7 @@
       </div>
     </div>
     <div style="position: fixed; right: 20px; top: 40%; z-index: 999">
-      <script
+      <!-- <script
         async
         src="https://cdn.adop.asia/scripts/a/1afa34a7f984eeabdbb0a7d494132ee5.js"
         crossorigin="anonymous"
@@ -987,7 +982,7 @@
         async
         src="https://cdn.adop.asia/scripts/a/65ded5353c5ee48d0b7d48c591b8f430.js"
         crossorigin="anonymous"
-      ></script>
+      ></script> -->
     </div>
     <div class="bg"></div>
 
@@ -1248,36 +1243,7 @@
                           tại LPL đã tăng vọt kể từ mùa giải 2019 nhưng đang
                           giảm dần trong 2 năm vừa qua.
                         </p>
-                        <link
-                          rel="stylesheet"
-                          href="https://cdn.jsdelivr.net/gh/netlink-player/video@master/instream.css"
-                        />
-                        <div style="display: inline">
-                          <div id="main-videoplayer">
-                            <video
-                              id="content_video"
-                              class="video-js vjs-default-skin"
-                              src="https://cdn.jsdelivr.net/gh/netlink-player/instream_netlink@master/video_netlink.mp4"
-                              preload="auto"
-                              controls="controls"
-                              height="360"
-                              width="640"
-                            ></video>
-                          </div>
-                        </div>
 
-                        <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-                        <script src="https://cdn.jsdelivr.net/gh/netlink-player/video@master/netlink-instream.js"></script>
-                        <script type="text/javascript">
-                          var ads = new Ads(
-                            [
-                              "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=http%3A%2F%2Fnetlink.vn&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&env=vp&unviewed_position_start=1&impl=s&correlator=",
-                            ],
-                            false,
-                            false,
-                            false
-                          );
-                        </script>
                         <p>
                           Dù Fenfen cũng như Ning đều không chia sẻ quan điểm về
                           lý do khiến mức lương của tuyển thủ LPL giảm sút,
@@ -1302,73 +1268,56 @@
                           >
                         </p>
                         <div class="tags clearfix">
-                          <a
-                            href="https://game4v.com.vn/tin-game/fenfen"
-                            rel="tag"
-                            >#Fenfen</a
-                          >
-                          <a
-                            href="https://game4v.com.vn/tin-game/lien-minh-huyen-thoa%cc%a3i"
-                            rel="tag"
-                            >#Liên minh huyền thoại</a
-                          >
-                          <a
-                            href="https://game4v.com.vn/tin-game/lmht"
-                            rel="tag"
-                            >#LMHT</a
-                          >
-                          <a href="https://game4v.com.vn/tin-game/lpl" rel="tag"
-                            >#LPL</a
-                          >
-                          <a
-                            href="https://game4v.com.vn/tin-game/ning"
-                            rel="tag"
-                            >#Ning</a
-                          >
-                          <a
-                            href="https://game4v.com.vn/tin-game/tien-luong"
-                            rel="tag"
-                            >#tiền lương</a
-                          >
+                          <link
+                            rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/gh/netlink-player/video@master/instream.css"
+                          />
+
+                          <div id="main-videoplayer">
+                            <video
+                              id="content_video"
+                              class="video-js vjs-default-skin"
+                              src="https://cdn.jsdelivr.net/gh/netlink-player/instream_netlink@master/video_netlink.mp4"
+                              preload="auto"
+                              controls="controls"
+                            ></video>
+                            <script>
+                              var mainvideoplayer =
+                                document.getElementById("content_video");
+                              if (window.innerWidth < 768) {
+                                mainvideoplayer.style.width = "320px";
+                                mainvideoplayer.style.height = "250px";
+                              } else {
+                                mainvideoplayer.style.width = "640px";
+                                mainvideoplayer.style.height = "360px";
+                              }
+                            </script>
+                          </div>
+
+                          <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+                          <script src="https://cdn.jsdelivr.net/gh/netlink-player/video@master/netlink-instream.js"></script>
+                          <script type="text/javascript">
+                            var ads = new Ads(
+                              [
+                                "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=http%3A%2F%2Fnetlink.vn&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&env=vp&unviewed_position_start=1&impl=s&correlator=",
+                              ],
+                              false,
+                              false,
+                              false
+                            );
+                          </script>
                         </div>
 
-                        <div
-                          class="fb-comments"
-                          data-href="https://game4v.com.vn/lmht-tuyen-thu-lpl-than-tho-tien-luong-giam-sut-lieu-co-phai-vi-thua-lck-suot-nhieu-mua-994248.g4v"
-                          data-numposts="3"
-                          data-colorscheme="light"
-                          data-order-by="reverse_time"
-                          data-mobile="true"
-                        ></div>
-                        <style>
-                          .fb_iframe_widget_fluid_desktop iframe {
-                            width: 750px !important;
-                          }
-                        </style>
-                      </div>
+                        
                     </div>
                     <!-- .entry-content -->
 
                     <div
                       class="saxon-bb-block saxon-bb-block-single_post_bottom clearfix"
-                    >
-                      <div id="div-gpt-ad-1571133525018-0"></div>
-                    </div>
+                    ></div>
                   </div>
                 </div>
               </article>
-              <div class="banner-single-ads pc_ads_container">
-                <zone id="l4zhpj2u"></zone>
-                <script>
-                  arfAsync.push("l4zhpj2u");
-                </script>
-              </div>
-              <div class="banner-single-ads mobile_ads_container">
-                <zone id="l4zi4pxd"></zone>
-                <script>
-                  arfAsync.push("l4zi4pxd");
-                </script>
-              </div>
             </div>
 
             <div class="comments-form-wrapper" id="comments-form-wrapper">
@@ -1415,28 +1364,10 @@
             <div class="hot-new-content-single">
               <hr class="is-mobile hr-line" />
 
-              <section id="banner-2 banner-single" class="banner-bottom-single">
-                <!-- <div id="banner-add-lixi88">
-        <div class="parent-div-text-ads pc_ads_container ">
-            <a href="https://vienchinhmobile.onelink.me/N8b6/game4v" target="blank" rel="noreferrer noopener" class="position-r">
-                <span class="text-ads-ads">Ads</span>
-                <img class="no-src img ls-is-cached lazyloaded" data-src="https://ecdn.game4v.com/g4v-content/uploads/2022/01/14144748/970x90-1638872368-92-pc-1641889802-51-1655192868-16.jpg" alt="Trang Tin Tức Game mới nhất, UY TÍN và TRUNG LẬP tại Game4V. Tổng hợp tin Game Online, Offline, eSports, PC-Console, game mobile được cập nhật NHANH CHÓNG." src="https://ecdn.game4v.com/g4v-content/uploads/2022/01/14144748/970x90-1638872368-92-pc-1641889802-51-1655192868-16.jpg">
-            </a>
-        </div>
-        <div class="parent-div-text-ads tablet_ads_container ">
-            <a href="https://vienchinhmobile.onelink.me/N8b6/game4v" target="blank" rel="noreferrer noopener" class="position-r">
-                <span class="text-ads-ads">Ads</span>
-                <img class="img" src="https://ecdn.game4v.com/g4v-content/uploads/2022/01/14144741/728x90-1638872366-74-tablet-1641889470-12-1655192861-2.jpg" alt="Trang Tin Tức Game mới nhất, UY TÍN và TRUNG LẬP tại Game4V. Tổng hợp tin Game Online, Offline, eSports, PC-Console, game mobile được cập nhật NHANH CHÓNG.">
-            </a>
-        </div>
-        <div class="parent-div-text-ads mobile_ads_container width-85p ">
-            <a href="https://vienchinhmobile.onelink.me/N8b6/game4v" target="blank" rel="noreferrer noopener" class="position-r">
-                <span class="text-ads-ads">Ads</span>
-                <img class="img" src="https://ecdn.game4v.com/g4v-content/uploads/2022/01/14144733/320x50-2-1638872365-88-mobile-1641889503-95-1655192853-2.jpg" alt="Trang Tin Tức Game mới nhất, UY TÍN và TRUNG LẬP tại Game4V. Tổng hợp tin Game Online, Offline, eSports, PC-Console, game mobile được cập nhật NHANH CHÓNG.">
-            </a>
-        </div>
-    </div>-->
-              </section>
+              <section
+                id="banner-2 banner-single"
+                class="banner-bottom-single"
+              ></section>
               <hr class="is-mobile hr-line" />
 
               <div id="latest-news">
@@ -1864,10 +1795,7 @@
       </div>
     </div>
 
-    <div class="saxon-bb-block saxon-bb-block-above_footer clearfix">
-      <p><!-- /86124698/G4V-WAP-Footer --></p>
-      <!-- <div id="div-gpt-ad-1571119739988-0"></div> -->
-    </div>
+    <div class="saxon-bb-block saxon-bb-block-above_footer clearfix"></div>
 
     <div class="back-to-top" title="Scroll to top">
       <a onclick="$(document).scrollTop(0);">
