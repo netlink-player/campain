@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script
+      type="text/javascript"
+      src="outstreamjs.js"
+    ></script>
+    <script type="text/javascript">
+      new VideoOutstreamjsNetlink(false, "video.mp4", "https://netlink.vn/");
+    </script>
+    <!-- <div id="stickballoon">
+      <a href="https://netlink.vn/">
+        <video
+          id="video_balloon"
+          preload="metadata"
+          playsinline=""
+          autoplay=""
+          loop
+          muted="true"
+        >
+          <source src="video.mp4" type="video/mp4" />
+        </video>
+      </a>
+      <button id="muteButton" class="mutebtn">&#x1F507;</button>
+      <button id="hiddenbtn" class="hiddenbtn">
+        <img src="btnout.png" style="height: 25px" />
+      </button>
+      <button id="showButton" class="showButton">&#x25B2;</button>
+    </div>
+
+    <script>
+      var video = document.getElementById("video_balloon");
+      var muteButton = document.getElementById("muteButton");
+      var hiddenbtn = document.getElementById("hiddenbtn");
+      var showButton = document.getElementById("showButton");
+
+      muteButton.addEventListener("click", function () {
+        if (video.muted) {
+          video.muted = false;
+          muteButton.innerHTML = "&#x1F50A;";
+        } else {
+          video.muted = true;
+          muteButton.innerHTML = "&#x1F507;";
+        }
+      });
+      hiddenbtn.addEventListener("click", function () {
+        video.classList.add("tranform_video");
+        muteButton.style.display = "none";
+        hiddenbtn.style.display = "none";
+        // showButton.style.display = "block";
+      });
+    //   video.addEventListener("mouseenter", function () {
+    //     showButton.style.display = "block";
+    //   });
+    //   video.addEventListener("mouseleave", function () {
+    //     showButton.style.display = "none";
+    //   });
+    </script>
+
+    <style>
+      #stickballoon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000000;
+      }
+      #video_balloon {
+        position: absolute;
+        border-radius: 20px;
+        bottom: 20px;
+        right: 20px;
+        height: 300px;
+      }
+      .tranform_video {
+        border-radius: 50% !important;
+        height: 80px !important;
+        width: 80px;
+        object-fit: cover;
+      }
+
+      .mutebtn {
+        position: absolute;
+        bottom: 30px;
+        font-size: 20px;
+        right: 130px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: none;
+        cursor: pointer;
+      }
+      .hiddenbtn {
+        position: absolute;
+        bottom: 280px;
+        right: 20px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        cursor: pointer;
+      }
+      .showButton {
+        display: none;
+        position: absolute;
+        bottom: 70px;
+        right: 45px;
+        z-index: 1;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        cursor: pointer;
+      }
+    </style> -->
+  </body>
+</html>
