@@ -191,7 +191,7 @@ var VideoOutstreamjsNetlink = function (
   reloadVideo.id = "reloadVideo";
   reloadVideo.className = "reloadVideo";
   var hiddenImg = document.createElement("img");
-  hiddenImg.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/oustreamjs/reload.png";
+  hiddenImg.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/outstreamjs/reload.png";
   hiddenImg.style.height = "35px";
   reloadVideo.appendChild(hiddenImg);
 
@@ -200,7 +200,7 @@ var VideoOutstreamjsNetlink = function (
   deleteVideo.id = "deleteVideo";
   deleteVideo.className = "deleteVideo";
   var deleteImage = document.createElement("img");
-  deleteImage.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/oustreamjs/delete.png";
+  deleteImage.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/outstreamjs/delete.png";
   deleteImage.style.height = "20px";
   deleteVideo.appendChild(deleteImage);
 
