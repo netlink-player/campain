@@ -69,7 +69,6 @@ var InImageTinmoiNetlink = function () {
 
   // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
 
- 
   // container_small.appendChild(newImage);
 
   container_small.appendChild(btnNetlinkClose);
@@ -77,13 +76,17 @@ var InImageTinmoiNetlink = function () {
   //add------------------------
   container_larg.appendChild(container_small);
 
--
-
-  document.addEventListener('DOMContentLoaded', function() {
+  if (images[1].parentNode) {
     container_larg.appendChild(images[1].cloneNode(true));
     images[1].parentNode.replaceChild(container_larg, images[1]);
     console.log(images[1].src);
-  });
+  } else {
+    setTimeout(function () {
+      container_larg.appendChild(images[1].cloneNode(true));
+      images[1].parentNode.replaceChild(container_larg, images[1]);
+      console.log(images[1].src);
+    }, 3000);
+  }
 
   btnNetlinkClose.addEventListener("click", () => {
     container_larg.removeChild(container_small);
