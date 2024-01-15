@@ -163,12 +163,13 @@ var VideoOutstreamjsNetlink = function (
   videoElement.autoplay = true;
   videoElement.loop = false;
   videoElement.muted = true;
+  videoElement.src = video_outstreamjs_src;
 
-  var videoSource = document.createElement("source");
-  videoSource.src = video_outstreamjs_src;
-  videoSource.type = "video/mp4";
+  // var videoSource = document.createElement("source");
+  // videoSource.src = video_outstreamjs_src;
+  // videoSource.type = "video/mp4";
 
-  videoElement.appendChild(videoSource);
+  // videoElement.appendChild(videoSource);
 
   // Tạo thẻ a và chèn video vào
   var linkElement = document.createElement("a");
