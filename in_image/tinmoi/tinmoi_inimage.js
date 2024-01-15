@@ -78,6 +78,7 @@ var InImageTinmoiNetlink = function () {
   btnNetlinkClose.style.position = "absolute";
   btnNetlinkClose.src =
     "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/close.png";
+  btnNetlinkClose.style.zIndex = 1;
 
   btnNetlinkClose.style.setProperty("width", "35px", "important");
   btnNetlinkClose.style.setProperty("height", "35px", "important");
@@ -90,17 +91,25 @@ var InImageTinmoiNetlink = function () {
   btnNetlinkClose.style.animationTimingFunction = "ease-in-out";
 
   // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
-  container_larg.appendChild(images[1].cloneNode(true));
-  container_small.appendChild(newImage);
 
-  container_small.appendChild(btnNetlinkClose);
+  container_larg.appendChild(images[1].cloneNode(true));
+  // container_small.appendChild(newImage);
+
+  // container_small.appendChild(btnNetlinkClose);
 
   //add------------------------
   container_larg.appendChild(container_small);
 
   // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
 
-  images[1].parentNode.replaceChild(container_larg, images[1]);
+  if (images[1].parentNode) {
+    images[1].parentNode.replaceChild(container_larg, images[1]);
+  } else {
+    setTimeout(() => {
+      images[1].parentNode.replaceChild(container_larg, images[1]);
+    }, 3000);
+  }
+
   btnNetlinkClose.addEventListener("click", () => {
     container_larg.removeChild(container_small);
   });
