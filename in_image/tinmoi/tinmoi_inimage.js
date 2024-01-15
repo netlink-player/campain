@@ -1,10 +1,13 @@
 var InImageTinmoiNetlink = function () {
+  var _head = window.top.document.querySelector("head");
   var _body = window.top.document.querySelector("body");
   var mainContentDetail = _body.querySelector(".main-content-detail");
   var images = mainContentDetail.querySelectorAll("img");
   console.log(images[1].src);
   var container_larg = document.createElement("div");
   var container_small = document.createElement("div");
+  container_small.id = "container_small";
+  container_small.style.zIndex = 8;
   container_larg.style.position = "relative";
   container_larg.style.display = "inline-block";
 
@@ -18,8 +21,32 @@ var InImageTinmoiNetlink = function () {
     images[1].height + "px",
     "important"
   );
-  // container_larg.style.width = images[1].width + "px";
-  // container_larg.style.height = images[1].height + "px";
+
+  // Create the script element
+  var scriptElement = document.createElement("script");
+  scriptElement.src =
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3166493188367342";
+  scriptElement.async = true;
+  scriptElement.crossOrigin = "anonymous";
+
+  // Append the script element to the document's head
+
+  // Create the ins element
+  var insElement = document.createElement("ins");
+  insElement.className = "adsbygoogle";
+  insElement.style.display = "block";
+  insElement.setAttribute("data-ad-client", "ca-pub-3166493188367342");
+  insElement.setAttribute("data-ad-slot", "8836477721");
+  insElement.setAttribute("data-ad-format", "auto");
+  insElement.setAttribute("data-full-width-responsive", "true");
+
+  var scriptElement2 = document.createElement("script");
+  scriptElement2.innerHTML =
+    "(adsbygoogle = window.adsbygoogle || []).push({});";
+  // Append the ins element to the document's body or any other desired location
+  _head.appendChild(scriptElement);
+  container_small.appendChild(insElement);
+  container_small.appendChild(scriptElement2);
 
   //new banner
   var newImage = document.createElement("img");
@@ -29,7 +56,6 @@ var InImageTinmoiNetlink = function () {
   newImage.style.left = "50%";
   newImage.style.opacity = 1;
   newImage.style.transform = "translateX(-50%)";
-  newImage.style.zIndex = 999;
   // newImage.style.width = images[1].width * 0.8 + "px";
   // newImage.style.height = "auto";
   // newImage.style.bottom = 0;
@@ -46,38 +72,12 @@ var InImageTinmoiNetlink = function () {
   newImage.style.animationName = "slideUp";
   newImage.style.animationDuration = "0.5s";
   newImage.style.animationTimingFunction = "ease-in-out";
-  var styleSheet = document.createElement("style");
-  styleSheet.innerHTML = `
-      @-webkit-keyframes slideUp {
-      0% {
-      transform: translate(-50%, 100%);
-      opacity: 0;
-          }
-      100% {
-      transform: translate(-50%, 0);
-      opacity: 1;
-          }
-    }
-
-    @-webkit-keyframes btnClose {
-      0% {
-      transform: translateY(100%);
-      opacity: 0;
-          }
-      100% {
-      transform: translateY(0);
-      opacity: 1;
-          }
-    }
-    `;
-  document.head.appendChild(styleSheet);
 
   //button_close
   var btnNetlinkClose = document.createElement("img");
   btnNetlinkClose.style.position = "absolute";
   btnNetlinkClose.src =
     "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/close.png";
-  btnNetlinkClose.style.zIndex = 999;
 
   btnNetlinkClose.style.setProperty("width", "35px", "important");
   btnNetlinkClose.style.setProperty("height", "35px", "important");
@@ -88,7 +88,6 @@ var InImageTinmoiNetlink = function () {
   btnNetlinkClose.style.animationName = "btnClose";
   btnNetlinkClose.style.animationDuration = "0.5s";
   btnNetlinkClose.style.animationTimingFunction = "ease-in-out";
-
 
   // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
   container_larg.appendChild(images[1].cloneNode(true));
