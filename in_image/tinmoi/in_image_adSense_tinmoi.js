@@ -7,14 +7,14 @@ var InImageTinmoiNetlink = function (intImage) {
     var container_larg = document.createElement("div");
     var container_small = document.createElement("div");
     container_small.id = "container_small";
-    container_small.style.position = "absolute";
-    container_small.style.bottom = 0;
+    // container_small.style.position = "absolute";
+    // container_small.style.bottom = 0;
     container_small.style.zIndex = 8;
-    container_small.style.setProperty(
-      "width",
-      images[intImage].width + "px",
-      "important"
-    );
+    // container_small.style.setProperty(
+    //   "width",
+    //   images[intImage].width + "px",
+    //   "important"
+    // );
     
     container_larg.style.position = "relative";
     container_larg.style.display = "inline-block";
