@@ -7,14 +7,14 @@ var InImageTinmoiNetlink = function (intImage) {
     var container_larg = document.createElement("div");
     var container_small = document.createElement("div");
     container_small.id = "container_small";
-    // container_small.style.position = "absolute";
-    // container_small.style.bottom = 0;
+    container_small.style.position = "absolute";
+    container_small.style.bottom = 0;
     container_small.style.zIndex = 8;
-    // container_small.style.setProperty(
-    //   "width",
-    //   images[intImage].width + "px",
-    //   "important"
-    // );
+    container_small.style.setProperty(
+      "width",
+      images[intImage].width + "px",
+      "important"
+    );
     
     container_larg.style.position = "relative";
     container_larg.style.display = "inline-block";
@@ -42,6 +42,11 @@ var InImageTinmoiNetlink = function (intImage) {
     // Create the ins element
     var insElement = document.createElement("ins");
     insElement.className = "adsbygoogle";
+    insElement.style.setProperty(
+      "width",
+      images[intImage].width + "px",
+      "important"
+    );
     insElement.style.display = "block";
     insElement.setAttribute("data-ad-client", "ca-pub-3166493188367342");
     insElement.setAttribute("data-ad-slot", "8836477721");
