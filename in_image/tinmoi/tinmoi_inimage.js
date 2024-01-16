@@ -82,10 +82,10 @@ var InImageTinmoiNetlink = function () {
 
   setTimeout(function () {
     container_larg.appendChild(images[1].cloneNode(true));
+    container_larg.appendChild(container_small);
     images[1].parentNode.replaceChild(container_larg, images[1]);
     console.log(images[1].src);
     console.log("ss");
-    container_larg.appendChild(container_small);
   }, 3000);
 
   btnNetlinkClose.addEventListener("click", () => {
