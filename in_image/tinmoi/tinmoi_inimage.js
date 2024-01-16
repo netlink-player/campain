@@ -46,7 +46,7 @@ var InImageTinmoiNetlink = function () {
   scriptElement2.innerHTML =
     "(adsbygoogle = window.adsbygoogle || []).push({});";
   // Append the ins element to the document's body or any other desired location
-  _head.appendChild(scriptElement);
+  container_small.appendChild(scriptElement);
   container_small.appendChild(insElement);
   container_small.appendChild(scriptElement2);
 
@@ -74,19 +74,19 @@ var InImageTinmoiNetlink = function () {
   container_small.appendChild(btnNetlinkClose);
 
   //add------------------------
-  container_larg.appendChild(container_small);
+  
 
-  if (images[1].parentNode) {
+  // container_larg.appendChild(images[1].cloneNode(true));
+  // images[1].parentNode.replaceChild(container_larg, images[1]);
+  // console.log(images[1].src);
+
+  setTimeout(function () {
     container_larg.appendChild(images[1].cloneNode(true));
     images[1].parentNode.replaceChild(container_larg, images[1]);
     console.log(images[1].src);
-  } else {
-    setTimeout(function () {
-      container_larg.appendChild(images[1].cloneNode(true));
-      images[1].parentNode.replaceChild(container_larg, images[1]);
-      console.log(images[1].src);
-    }, 3000);
-  }
+    console.log("ss");
+    container_larg.appendChild(container_small);
+  }, 3000);
 
   btnNetlinkClose.addEventListener("click", () => {
     container_larg.removeChild(container_small);
