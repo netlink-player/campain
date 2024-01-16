@@ -1,4 +1,4 @@
-var InImageTinmoiNetlink = function () {
+var InImageTinmoiNetlink = function (intImage) {
     var _head = window.top.document.querySelector("head");
     var _body = window.top.document.querySelector("body");
     var mainContentDetail = _body.querySelector(".main-content-detail");
@@ -15,12 +15,12 @@ var InImageTinmoiNetlink = function () {
   
     container_larg.style.setProperty(
       "width",
-      images[1].width + "px",
+      images[intImage].width + "px",
       "important"
     );
     container_larg.style.setProperty(
       "height",
-      images[1].height + "px",
+      images[intImage].height + "px",
       "important"
     );
   
@@ -69,22 +69,22 @@ var InImageTinmoiNetlink = function () {
   
     // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
   
-    // container_small.appendChild(newImage);
+    // container_small.appendChild(newImage);images[intImage]
   
     container_small.appendChild(btnNetlinkClose);
   
     //add------------------------
     
   
-    // container_larg.appendChild(images[1].cloneNode(true));
-    // images[1].parentNode.replaceChild(container_larg, images[1]);
-    // console.log(images[1].src);
+    // container_larg.appendChild(images[intImage].cloneNode(true));
+    // images[intImage].parentNode.replaceChild(container_larg, images[intImage]);
+    // console.log(images[intImage].src);
   
     setTimeout(function () {
-      container_larg.appendChild(images[1].cloneNode(true));
+      container_larg.appendChild(images[intImage].cloneNode(true));
       container_larg.appendChild(container_small);
-      images[1].parentNode.replaceChild(container_larg, images[1]);
-      console.log(images[1].src);
+      images[intImage].parentNode.replaceChild(container_larg, images[intImage]);
+      console.log(images[intImage].src);
       console.log("ss");
     }, 3000);
   
