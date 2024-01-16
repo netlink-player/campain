@@ -46,7 +46,7 @@ var InImageTinmoiNetlink = function () {
     scriptElement2.innerHTML =
       "(adsbygoogle = window.adsbygoogle || []).push({});";
     // Append the ins element to the document's body or any other desired location
-    container_small.appendChild(scriptElement);
+    _head.appendChild(scriptElement);
     container_small.appendChild(insElement);
     container_small.appendChild(scriptElement2);
   
