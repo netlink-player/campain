@@ -42,8 +42,8 @@ var InImageTinmoiNetlink = function (intImage) {
 
   // Create the ins element
   var insElement = document.createElement("ins");
-  //   insElement.className = `adsbygoogle width: ${images[intImage].width} + "px"`;
-  insElement.className = "adsbygoogle";
+    insElement.className = `adsbygoogle width: ${images[intImage].width} + "px"`;
+//   insElement.className = "adsbygoogle";
   insElement.style.setProperty(
     "width",
     images[intImage].width + "px",
