@@ -10,7 +10,7 @@ var InImageTinmoiNetlink = function (intImage) {
     container_small.style.position = "absolute";
     container_small.style.bottom = 0;
     container_small.style.zIndex = 8;
-    container_small.style.backgroundColor = "white";
+    // container_small.style.backgroundColor = "white";
     container_small.style.setProperty(
       "width",
       images[intImage].width + "px",
