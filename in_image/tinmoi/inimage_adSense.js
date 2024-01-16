@@ -10,7 +10,7 @@ var InImageTinmoiNetlink = function (intImage) {
     container_small.style.position = "absolute";
     container_small.style.bottom = 0;
     container_small.style.zIndex = 8;
-    container_small.style.backgroundColor = "while";
+    container_small.style.backgroundColor = "white";
     container_small.style.setProperty(
       "width",
       images[intImage].width + "px",
@@ -67,7 +67,7 @@ var InImageTinmoiNetlink = function (intImage) {
     var btnNetlinkClose = document.createElement("img");
     btnNetlinkClose.style.position = "absolute";
     btnNetlinkClose.src =
-      "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/close.png";
+      "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/hidden.png";
     btnNetlinkClose.style.zIndex = 1;
   
     btnNetlinkClose.style.setProperty("width", "35px", "important");
