@@ -1,7 +1,7 @@
 var StickyBalloonNetlink = function (
   isStickyLeft,
   video_balloon_src,
-  aBallon_src
+  aBallon_src, _sizeBotton, _sizeHox
 ) {
   //body
   var body = window.top.document.querySelector("body");
@@ -9,8 +9,8 @@ var StickyBalloonNetlink = function (
   var cssStickyBallonLeft = `
 #stickballoon {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: ${_sizeBotton};
+  left: ${_sizeHox};
   z-index: 99000;
 }
 #video_balloon {
@@ -56,8 +56,8 @@ var StickyBalloonNetlink = function (
   var cssStickyBallon = `
 #stickballoon {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: ${_sizeBotton};
+  right: ${_sizeHox};
   z-index: 99000;
 }
 #video_balloon {

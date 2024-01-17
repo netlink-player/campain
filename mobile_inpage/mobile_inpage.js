@@ -12,7 +12,7 @@ var MobileInPageNetlink = function (
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100000;
+    z-index: 10000000;
     text-align: center;
     opacity: 0;
     display: none;
