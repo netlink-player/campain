@@ -584,7 +584,7 @@ function bannerHideFromPhoneScreen() {}
 
 function startFirstCard() {}
 //material.js@
-var innityAppsGenericBackground = "bg.jpg";
+var innityAppsGenericBackground = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/bg.jpg";
 var innityAppsMaterials = [
   // { elType: "img", cssClass: ["card-background"], attrs: { src: "bg.jpg" } },
   {
@@ -609,12 +609,12 @@ var innityAppsMaterials = [
                   {
                     elType: "img",
                     cssClass: ["card-image"],
-                    attrs: { src: "card_1.png", "data-clicktag": "clickTAG" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/card_1.png", "data-clicktag": "clickTAG" },
                   },
                   {
                     elType: "img",
                     cssClass: ["card-image", "cta"],
-                    attrs: { src: "cta1.png", "data-clicktag": "clickTAG" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/cta1.png", "data-clicktag": "clickTAG" },
                   },
                 ],
               },
@@ -642,12 +642,12 @@ var innityAppsMaterials = [
                   {
                     elType: "img",
                     cssClass: ["card-image"],
-                    attrs: { src: "card_2.png", "data-clicktag": "clickTAG1" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/card_2.png", "data-clicktag": "clickTAG1" },
                   },
                   {
                     elType: "img",
                     cssClass: ["card-image", "cta"],
-                    attrs: { src: "cta2.png", "data-clicktag": "clickTAG1" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/cta2.png", "data-clicktag": "clickTAG1" },
                   },
                 ],
               },
@@ -675,12 +675,12 @@ var innityAppsMaterials = [
                   {
                     elType: "img",
                     cssClass: ["card-image"],
-                    attrs: { src: "card_3.png", "data-clicktag": "clickTAG2" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/card_3.png", "data-clicktag": "clickTAG2" },
                   },
                   {
                     elType: "img",
                     cssClass: ["card-image", "cta"],
-                    attrs: { src: "cta3.png", "data-clicktag": "clickTAG2" },
+                    attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/cta3.png", "data-clicktag": "clickTAG2" },
                   },
                 ],
               },
@@ -701,7 +701,7 @@ var innityAppsMaterials = [
           { cssClass: ["small-dot"] },
           {
             cssClass: ["text"],
-            childs: [{ elType: "img", attrs: { src: "swipeedu.png" } }],
+            childs: [{ elType: "img", attrs: { src: "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/mobile_card/swipeedu.png" } }],
           },
         ],
       },
