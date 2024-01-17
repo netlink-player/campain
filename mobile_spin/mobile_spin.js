@@ -75,7 +75,7 @@ var MobileSpinNetlink = function (
       #mobileRevolver-deletebtn {
         position: absolute;
         right: 10px;
-        z-index: 999;
+        z-index: 1000;
         background: rgba(255, 255, 255, 0.8);
         border-radius: 20%;
         cursor: pointer;
@@ -114,9 +114,7 @@ var MobileSpinNetlink = function (
   MobileSpinDiv.classList.add("mobile_spin");
   MobileSpinDiv.id = "mobilespinElement";
 
-  // Tạo phần tử a
-  const linkElement = document.createElement("a");
-  linkElement.href = "https://netlink.vn/";
+  
 
   // Tạo phần tử img trong phần tử a
   const imageElement = document.createElement("img");
@@ -125,10 +123,10 @@ var MobileSpinNetlink = function (
   imageElement.alt = "Hình ảnh";
 
   // Gắn phần tử img vào phần tử a
-  linkElement.appendChild(imageElement);
+  
 
   // Gắn phần tử a vào phần tử cha
-  MobileSpinDiv.appendChild(linkElement);
+  MobileSpinDiv.appendChild(imageElement);
 
   // Tạo phần tử div
   const imagebtSpinContainer = document.createElement("div");
@@ -140,8 +138,13 @@ var MobileSpinNetlink = function (
   imagebtSpinElement.src = imagebt_MobileSpin_src;
   imagebtSpinElement.alt = "Hình ảnh";
 
+  // Tạo phần tử a
+  const linkElement = document.createElement("a");
+  linkElement.href = "https://netlink.vn/";
+  linkElement.appendChild(imagebtSpinElement);
+
   // Gắn phần tử img vào phần tử div
-  imagebtSpinContainer.appendChild(imagebtSpinElement);
+  imagebtSpinContainer.appendChild(linkElement);
 
   // Gắn phần tử div vào phần tử cha
   MobileSpinDiv.appendChild(imagebtSpinContainer);

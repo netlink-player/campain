@@ -11,7 +11,7 @@ var StickyBalloonNetlink = function (
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index: 1000000;
+  z-index: 99000;
 }
 #video_balloon {
   position: absolute;
@@ -43,6 +43,8 @@ var StickyBalloonNetlink = function (
   position: absolute;
   bottom: 280px;
   left: 20px;
+  height: 50px;
+  width: 50px;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0);
   border: none;
@@ -56,7 +58,7 @@ var StickyBalloonNetlink = function (
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000000;
+  z-index: 99000;
 }
 #video_balloon {
   position: absolute;
@@ -88,6 +90,8 @@ var StickyBalloonNetlink = function (
   position: absolute;
   bottom: 280px;
   right: 20px;
+  height: 50px;
+  width: 50px;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0);
   border: none;

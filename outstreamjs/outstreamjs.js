@@ -236,9 +236,7 @@ var VideoOutstreamjsNetlink = function (
   });
 
   deleteVideo.addEventListener("click", function () {
-    var parentElement = stickoutstreamjs.parentNode;
-    parentElement.removeChild(stickoutstreamjs);
-    parentElement.remove();
+    stickoutstreamjs.remove();
   });
   videoElement.addEventListener("ended", function () {
     divReloadElement.style.display = "block";

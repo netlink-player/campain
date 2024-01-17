@@ -589,24 +589,51 @@
 
     <!-- outstream video -->
     <script>
-      window.googletag = window.googletag || { cmd: [] };
-      googletag.cmd.push(function () {
-        googletag
-          .defineSlot(
-            "/22486823495/video_outstreamjs",
-            [1, 1],
-            "div-gpt-ad-1705027323705-0"
-          )
-          .addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
+      if (window.innerWidth >= 768) {
+        window.googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(function () {
+          googletag
+            .defineSlot(
+              "/22486823495/video_outstreamjs",
+              [1, 1],
+              "div-gpt-ad-1705027323705-0"
+            )
+            .addService(googletag.pubads());
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+        });
+      }
     </script>
     <!-- /22486823495/video_outstreamjs -->
     <div id="div-gpt-ad-1705027323705-0" style="height: 0">
       <script>
         googletag.cmd.push(function () {
           googletag.display("div-gpt-ad-1705027323705-0");
+        });
+      </script>
+    </div>
+
+    <script>
+      if (window.innerWidth < 768) {
+        window.googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(function () {
+          googletag
+            .defineSlot(
+              "/22486823495/stickyballoon_campain",
+              [1, 1],
+              "div-gpt-ad-1702367534655-0"
+            )
+            .addService(googletag.pubads());
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+        });
+      }
+    </script>
+    <!-- /22486823495/stickyballoon_campain -->
+    <div id="div-gpt-ad-1702367534655-0" style="height: 0">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("div-gpt-ad-1702367534655-0");
         });
       </script>
     </div>
@@ -638,8 +665,8 @@
     </div>
 
     <!-- Mobile First View -->
-    <!-- <script>
-      if (window.innerWidth >= 768) {
+    <script>
+      if (window.innerWidth < 768) {
         window.googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(function () {
           googletag
@@ -654,13 +681,13 @@
         });
       }
     </script>
-    <div id="div-gpt-ad-1702432884683-0">
+    <div id="div-gpt-ad-1702432884683-0" style="height: 0">
       <script>
         googletag.cmd.push(function () {
           googletag.display("div-gpt-ad-1702432884683-0");
         });
       </script>
-    </div> -->
+    </div>
 
     <!-- saxon_topline_display -->
     <div class="header-topline-wrapper">
