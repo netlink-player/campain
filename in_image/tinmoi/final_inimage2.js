@@ -94,7 +94,7 @@ var InImageTinmoiNetlink = function (intImage) {
   }
 
   const intervalImg = setInterval(() => {
-    if (!isImageFile(images[intImage].src)) {
+    if (isImageFile(images[intImage].src)) {
       container_larg.appendChild(images[intImage].cloneNode(true));
       container_larg.appendChild(container_small);
       images[intImage].parentNode.replaceChild(
