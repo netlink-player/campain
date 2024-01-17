@@ -753,9 +753,9 @@ body {
   overflow: hidden;
   margin: 0 auto;
   left: 0px;
-  bottom: 0px;
+  bottom: -100px;
   cursor: pointer;
-  z-index: 1000000;
+  z-index: 100000;
 }
 
 #innity-apps-banner-content {
