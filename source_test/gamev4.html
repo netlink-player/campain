@@ -556,13 +556,15 @@
       async
       src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
   </head>
   <body
     class="post-template-default single single-post postid-994248 single-format-standard theme-saxon woocommerce-no-js blog-post-transparent-header-disable blog-small-page-width blog-slider-disable blog-enable-dropcaps blog-enable-images-animations blog-enable-sticky-sidebar blog-enable-sticky-header elementor-default"
   >
-    <script>
-      var _head = window.top.document.querySelector("head");
-    </script>
     <!-- Masthead -->
     <script>
       window.googletag = window.googletag || { cmd: [] };
@@ -1072,6 +1074,7 @@
                           </span>
                         </div>
                       </div>
+
                       <h1 class="title-post-custom">
                         LMHT: Tuyển thủ LPL than thở tiền lương giảm sút, liệu
                         có phải vì thua LCK suốt nhiều mùa?
@@ -1242,6 +1245,79 @@
                           khu vực LPL.
                         </p>
 
+                        <!-- inpage_300x600 -->
+                        <script>
+                          $(document).ready(function () {
+                            $(document).ready(function () {
+                              $(window).on("scroll", function () {
+                                if (
+                                  document.getElementById("content-ad") != null
+                                ) {
+                                  var top =
+                                    $("#content-ad").offset().top -
+                                    $(window).scrollTop() -
+                                    80;
+                                  var bot = top > 0 ? 600 : 600 + top;
+
+                                  if ($(window).width() < 768) {
+                                    document
+                                      .getElementById("content-ad")
+                                      .style.setProperty(
+                                        "height",
+                                        "600px",
+                                        "important"
+                                      );
+                                    $("#ad").css({
+                                      display: `block`,
+                                      clip:
+                                        `rect(` +
+                                        top +
+                                        `px, 300px, ` +
+                                        bot +
+                                        `px, 0px)`,
+                                      left:
+                                        ($(window).width() - 300) / 2 + `px`,
+                                    });
+                                  }
+                                }
+                              });
+                            });
+
+                            var count = 0;
+                            var links = $(".entry-content").find("p");
+                            if (links.length <= 4) midpoint = 1;
+                            else midpoint = Math.floor(links.length / 2);
+                            for (var i = 0; i < links.length; i++) {
+                              count++;
+                              if (count == midpoint) {
+                                var ele = links[i];
+
+                                function insertAfter(referenceNode, newNode) {
+                                  referenceNode.parentNode.insertBefore(
+                                    newNode,
+                                    referenceNode.nextSibling
+                                  );
+                                }
+
+                                var el = document.createElement("div");
+                                el.setAttribute("id", "netlink");
+                                var div = links[i];
+                                insertAfter(div, el);
+                              }
+                            }
+                            var html =
+                              '<div id="content-ad" style="overflow: hidden; position: relative; z-index: 2; width: 100%;">';
+                            html +=
+                              '<div id="ad" style="position: fixed;z-index: 10000;top: 70px;display:none;">';
+                            html +=
+                              '<img src="https://cdn.diemnhangroup.com/diemnhan/2023/10/nha-tai-tro-vang-1-724x1024.jpg"' +
+                              'style="display:inline-block;width:auto;height:100%;">' +
+                              "</img>";
+                            html += "</div>";
+                            html += "</div>";
+                            $("#netlink").append(html);
+                          });
+                        </script>
                         <p>
                           Không những vậy, đồng đội cũ của SofM &#8211; Fenfen
                           cũng nói về tình hình chung của khu vực LPL, anh nhận
@@ -1851,11 +1927,7 @@
       </a>
     </div>
     <!-- In-image -->
-    <script
-      async
-      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-    ></script>
-    <script>
+    <!-- <script>
       window.googletag = window.googletag || { cmd: [] };
       googletag.cmd.push(function () {
         googletag
@@ -1868,16 +1940,26 @@
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
-    </script>
+    </script> -->
 
     <!-- /22486823495/in_imgaejs_video -->
-    <div id="div-gpt-ad-1704169053775-0">
+    <!-- <div id="div-gpt-ad-1704169053775-0">
       <script>
         googletag.cmd.push(function () {
           googletag.display("div-gpt-ad-1704169053775-0");
         });
       </script>
-    </div>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/source_test/game4v.js"></script>
+    <script type="text/javascript">
+      new InImageVideoNetlink(
+        2,
+        "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/video/monter.png",
+        "https://www.youtube.com/embed/5CrF2R43YhE?si=vnZzPE0tvdIgYgXo",
+        215
+      );
+    </script>
 
     <footer id="footer">
       <div class="container">

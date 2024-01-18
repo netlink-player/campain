@@ -37,5 +37,27 @@ var MobileCardNetlink = function () {
   // Thêm thẻ div "innity-apps-banner-content" vào thẻ div "innity-apps-ad"
   divInnityAppsAd.appendChild(divInnityAppsBannerContent);
 
+  var btnNetlinkClose = document.createElement("img");
+  btnNetlinkClose.style.position = "absolute";
+  btnNetlinkClose.src =
+    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/close.png";
+  btnNetlinkClose.style.zIndex = 1;
+  // btnNetlinkClose.style.width = "50px";
+  // btnNetlinkClose.style.height = "50px";
+  // btnNetlinkClose.style.right = "10px";
+  // btnNetlinkClose.style.bottom = "80px";
+
+  btnNetlinkClose.style.setProperty("width", "50px", "important");
+  btnNetlinkClose.style.setProperty("height", "50px", "important");
+  btnNetlinkClose.style.setProperty("right", "10px", "important");
+  btnNetlinkClose.style.setProperty("bottom", "100px", "important");
+
+  btnNetlinkClose.style.cursor = "pointer";
+
+  divInnityAppsAd.appendChild(btnNetlinkClose);
+
   _body.appendChild(divInnityAppsAd);
+  btnNetlinkClose.addEventListener("click", function () {
+    divInnityAppsAd.remove();
+  });
 };

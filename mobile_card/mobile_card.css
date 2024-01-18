@@ -753,7 +753,7 @@ body {
   overflow: hidden;
   margin: 0 auto;
   left: 0px;
-  bottom: -100px;
+  bottom: -150px;
   cursor: pointer;
   z-index: 100000;
 }
