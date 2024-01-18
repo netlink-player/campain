@@ -12,7 +12,7 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   var container_larg = document.createElement("div");
   var container_small = document.createElement("div");
   //   container_small.style.position = "absolute";
-  //   container_small.style.bottom = 0;
+    // container_small.style.bottom = 0;
   container_small.style.zIndex = 8;
   container_larg.style.position = "relative";
   container_larg.style.display = "inline-block";
@@ -36,7 +36,7 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   // newImage.style.setProperty("left", "50%", "important");
   newImage.style.setProperty("width", _ImageQr.width * 0.8 + "px", "important");
   newImage.style.setProperty("height", "auto", "important");
-  newImage.style.setProperty("bottom", _btpx + "px", "important");
+  newImage.style.setProperty("bottom", 0 + "px", "important");
 
   newImage.style.animationName = "slideUp";
   newImage.style.animationDuration = "0.5s";
@@ -71,17 +71,22 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   var btnNetlinkClose = document.createElement("img");
   btnNetlinkClose.style.position = "absolute";
   btnNetlinkClose.src =
-    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/in_image/close.png";
+    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/outstreamjs/delete.png";
   btnNetlinkClose.style.zIndex = 1;
   // btnNetlinkClose.style.width = "50px";
   // btnNetlinkClose.style.height = "50px";
   // btnNetlinkClose.style.right = "10px";
   // btnNetlinkClose.style.bottom = "80px";
 
-  btnNetlinkClose.style.setProperty("width", "50px", "important");
-  btnNetlinkClose.style.setProperty("height", "50px", "important");
+  btnNetlinkClose.style.setProperty("width", "20px", "important");
+  btnNetlinkClose.style.setProperty("height", "20px", "important");
   btnNetlinkClose.style.setProperty("right", "10px", "important");
-  btnNetlinkClose.style.setProperty("bottom", "250px", "important");
+  btnNetlinkClose.style.setProperty("bottom", "35px", "important");
+  btnNetlinkClose.style.backgroundColor = "white";
+  btnNetlinkClose.style.border = "1px";
+  btnNetlinkClose.style.borderRadius = "50%";
+  btnNetlinkClose.style.padding = '4px';
+
 
   btnNetlinkClose.style.cursor = "pointer";
   btnNetlinkClose.style.animationName = "btnClose";
@@ -117,7 +122,7 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   container_small.appendChild(newImage);
 
   container_small.appendChild(btnNetlinkClose);
-  container_small.appendChild(elmNetlinkAfter);
+  // container_small.appendChild(elmNetlinkAfter);
 
   //add------------------------
   container_larg.appendChild(container_small);
