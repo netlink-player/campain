@@ -50,7 +50,7 @@ var MobileCardNetlink = function () {
   btnNetlinkClose.style.setProperty("width", "50px", "important");
   btnNetlinkClose.style.setProperty("height", "50px", "important");
   btnNetlinkClose.style.setProperty("right", "10px", "important");
-  btnNetlinkClose.style.setProperty("bottom", "100px", "important");
+  btnNetlinkClose.style.setProperty("bottom", "160px", "important");
 
   btnNetlinkClose.style.cursor = "pointer";
 
