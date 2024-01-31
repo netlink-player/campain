@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .progress-bar {
+      position: relative;
+      width: 200px;
+      height: 20px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #007bff;
+      width: 50%; /* Giá trị âm lượng ban đầu */
+      transition: width 0.3s ease;
+    }
+
+    .draggable-handle {
+      position: absolute;
+      top: 0;
+      left: 50%; /* Giá trị âm lượng ban đầu */
+      transform: translateX(-50%);
+      width: 10px;
+      height: 100%;
+      background-color: #ccc;
+      cursor: move;
+    }
+  </style>
+  <body>
+    <div class="progress-bar">
+      <div class="progress"></div>
+      <div
+        class="draggable-handle"
+        draggable="true"
+        ondrag="handleDrag(event)"
+        ondragend="handleDragEnd(event)"
+      ></div>
+    </div>
+    <script>
+      var progressBar = document.querySelector(".progress-bar");
+      var progress = document.querySelector(".progress");
+      var draggableHandle = document.querySelector(".draggable-handle");
+
+      draggableHandle.addEventListener("dragstart", handleDragStart);
+      progressBar.addEventListener("dragover", handleDragOver);
+      progressBar.addEventListener("drop", handleDrop);
+
+      function handleDragStart(event) {
+        event.dataTransfer.setData("text/plain", event.target.id);
+      }
+
+      function handleDragOver(event) {
+        event.preventDefault();
+      }
+
+      function handleDrop(event) {
+        event.preventDefault();
+        var rect = progressBar.getBoundingClientRect();
+        var offsetX = event.clientX - rect.left;
+        var volume = Math.max(0, Math.min(1, offsetX / rect.width));
+        setVolume(volume);
+      }
+
+      function setVolume(volume) {
+        progress.style.width = volume * 100 + "%";
+        draggableHandle.style.left = volume * 100 + "%";
+      }
+
+      function handleDrag(event) {
+        var rect = progressBar.getBoundingClientRect();
+        var offsetX = event.clientX - rect.left;
+        var volume = Math.max(0, Math.min(1, offsetX / rect.width));
+        setVolume(volume);
+        console.log(volume); // Log giá trị âm lượng
+      }
+
+      function handleDragEnd(event) {
+        var rect = progressBar.getBoundingClientRect();
+        var offsetX = event.clientX - rect.left;
+        var volume = Math.max(0, Math.min(1, offsetX / rect.width));
+        setVolume(volume);
+      }
+    </script>
+  </body>
+</html>

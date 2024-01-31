@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div style="height: 1000px; background-color: red"></div>
+    <script>
+      var PopUpFirstView = function () {
+        var body = window.top.document.querySelector("body");
+        var _head = window.top.document.querySelector("head");
+        // Tạo phần tử div chứa hình ảnh
+        var mobileinpageElement = document.createElement("div");
+        mobileinpageElement.classList.add("mobile_inpage");
+        mobileinpageElement.style.setProperty("width", "100%", "important");
+        mobileinpageElement.style.setProperty("position", "fixed", "important");
+        mobileinpageElement.style.setProperty("top", "0", "important");
+        mobileinpageElement.style.setProperty("left", "0", "important");
+        mobileinpageElement.style.zIndex = "10000000000";
+        mobileinpageElement.style.textAlign = "center";
+        mobileinpageElement.style.opacity = 1;
+        mobileinpageElement.style.height = "100vh";
+        //mobileinpageElement.style.setProperty("height", "100vh", "important");
+        mobileinpageElement.style.setProperty(
+          "min-height",
+          "300px",
+          "important"
+        );
+        mobileinpageElement.style.backgroundColor = "white";
+        mobileinpageElement.style.visibility = "visible";
+
+        // Create the script element
+        var scriptElementAds = document.createElement("script");
+        scriptElementAds.src =
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3166493188367342";
+        scriptElementAds.async = true;
+        scriptElementAds.crossOrigin = "anonymous";
+
+        // Append the script element to the document's head
+
+        // Create the ins element
+        var insElement = document.createElement("ins");
+        insElement.className = "adsbygoogle";
+        insElement.style.display = "block";
+        insElement.setAttribute("data-ad-client", "ca-pub-3166493188367342");
+        insElement.setAttribute("data-ad-slot", "6296231830");
+        insElement.setAttribute("data-ad-format", "auto");
+        insElement.setAttribute("data-full-width-responsive", "true");
+
+        var scriptElementAds2 = document.createElement("script");
+        scriptElementAds2.innerHTML =
+          "(adsbygoogle = window.adsbygoogle || []).push({});";
+        // Append the ins element to the document's body or any other desired location
+        _head.appendChild(scriptElementAds);
+
+        // Tạo nút xóa
+
+        var btnCloseNLPopUp = document.createElement("span");
+        btnCloseNLPopUp.innerHTML = "×";
+        btnCloseNLPopUp.style.position = "absolute";
+        btnCloseNLPopUp.style.setProperty("display", "block", "important");
+        btnCloseNLPopUp.style.zIndex = 99;
+        btnCloseNLPopUp.style.setProperty("width", "25px", "important");
+        btnCloseNLPopUp.style.setProperty("height", "25px", "important");
+        btnCloseNLPopUp.style.setProperty("left", "10px", "important");
+        btnCloseNLPopUp.style.setProperty("top", "25%", "important");
+        btnCloseNLPopUp.style.cursor = "pointer";
+        btnCloseNLPopUp.style.fontSize = "25px";
+        btnCloseNLPopUp.style.background = "white";
+        btnCloseNLPopUp.style.padding = "2px";
+        btnCloseNLPopUp.style.borderRadius = "20px";
+
+        var divCloseNLPopUp = document.createElement("div");
+        divCloseNLPopUp.style.height = "50px";
+        divCloseNLPopUp.style.position = "relative";
+        divCloseNLPopUp.style.backgroundColor = "#EDEFF6";
+
+        var aCloseNLPopUp = document.createElement("a");
+        aCloseNLPopUp.href = "https://netlink.vn/";
+        var imgCloseNLPopUp = document.createElement("img");
+        // imgCloseNLPopUp.style.height = "30px";
+        imgCloseNLPopUp.style.setProperty("height", "30px", "important");
+        imgCloseNLPopUp.style.position = "absolute";
+        imgCloseNLPopUp.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/popup_tinmoi/logo.png";
+        imgCloseNLPopUp.style.setProperty("right", "10px", "important");
+        imgCloseNLPopUp.style.setProperty("top", "25%", "important");
+
+        aCloseNLPopUp.appendChild(imgCloseNLPopUp);
+
+        divCloseNLPopUp.appendChild(aCloseNLPopUp);
+        divCloseNLPopUp.appendChild(btnCloseNLPopUp);
+        mobileinpageElement.appendChild(divCloseNLPopUp);
+
+        mobileinpageElement.appendChild(insElement);
+        mobileinpageElement.appendChild(scriptElementAds2);
+
+        // Tạo một phần tử div mới
+        body.appendChild(mobileinpageElement);
+        if (window.innerWidth <= 768) {
+          mobileinpageElement.style.setProperty(
+            "display",
+            "block",
+            "important"
+          );
+        } else {
+          mobileinpageElement.style.setProperty("display", "none", "important");
+        }
+
+        window.addEventListener("scroll", function () {
+          //mobileinpageElement.style.height = window.innerHeight + "px";
+          mobileinpageElement.style.height = "100vh";
+        });
+
+        btnCloseNLPopUp.addEventListener("click", function () {
+          mobileinpageElement.remove();
+        });
+
+        var adCheck = setIntervalWithTimeout(
+          function () {
+            if (insElement.getAttribute("data-ad-status") == "filled") {
+              btnCloseNLPopUp.style.display = "block";
+              mobileinpageElement.style.height = "100vh";
+              mobileinpageElement.style.visibility = "visible";
+              clearInterval(adCheck.intervalId);
+            } else {
+              // mobileinpageElement.style.visibility = "hidden";
+            }
+          },
+          1000,
+          10000
+        );
+      };
+      function setIntervalWithTimeout(callback, interval, timeout) {
+        var timer = setInterval(function () {
+          callback();
+        }, interval);
+        var timeoutId = setTimeout(function () {
+          clearInterval(timer);
+        }, timeout);
+        return { intervalId: timer, timeoutId: timeoutId };
+      }
+    </script>
+    <div style="height: 1000px; background-color: yellow"></div>
+    <script type="text/javascript">
+      new PopUpFirstView();
+    </script>
+  </body>
+</html>
