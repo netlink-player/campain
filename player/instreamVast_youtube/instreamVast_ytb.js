@@ -9,7 +9,7 @@ let adDisplayContainer;
 let intervalTimer;
 let isAdPlaying;
 let isContentFinished;
-let playButton;
+let playButton = document.createElement("button");
 let videoContent;
 let content;
 let mainContainerNlVastYtb;
@@ -60,7 +60,6 @@ function onPlayerStateChange(event) {
 }
 function init() {
   setUpCss();
-  playButton.addEventListener("click", playAds);
   setUpIMA();
 }
 
@@ -72,9 +71,25 @@ function setUpCss() {
   mainContainerNlVastYtb.style.height = sizeHeight;
 
   videoContent = document.getElementById("youtubePlayer");
-  playButton = document.getElementById("playButton");
   content = document.getElementById("content");
   content.style.zIndex = 1;
+
+  playButton.innerText = "SKIP ADS";
+  playButton.style.position = "absolute";
+  playButton.style.zIndex = "2";
+  playButton.style.width = "100px";
+  playButton.style.height = "30px";
+  playButton.style.bottom = "20px";
+  playButton.style.right = "0";
+  playButton.style.backgroundColor = "#ffffff69";
+  playButton.style.cursor = "pointer";
+  playButton.textContent = "SKIP ADS";
+  playButton.addEventListener("click", function () {
+    adsManager.stop();
+    playButton.remove();
+    console.log(adsManager.getAdSkippableState());
+    skipAds();
+  });
 }
 
 /**
@@ -103,10 +118,11 @@ function setUpIMA() {
   // Request video ads.
   const adsRequest = new google.ima.AdsRequest();
   adsRequest.adTagUrl =
-    "https://pubads.g.doubleclick.net/gampad/ads?" +
-    "iu=/21775744923/external/single_ad_samples&sz=640x480&" +
-    "cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&" +
-    "output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+    "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=https%3A%2F%2Fnetlink.vn%2F&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+  // "https://pubads.g.doubleclick.net/gampad/ads?" +
+  // "iu=/21775744923/external/single_ad_samples&sz=640x480&" +
+  // "cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&" +
+  // "output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.
@@ -135,23 +151,26 @@ function createAdDisplayContainer() {
  * Loads the video content and initializes IMA ad playback.
  */
 function playAds() {
-  // Initialize the container. Must be done through a user action on mobile
-  // devices.
   // videoContent.load();
   adDisplayContainer.initialize();
 
   try {
-    // Initialize the ads manager. Ad rules playlist will start at this time.
     adsManager.init(640, 360, google.ima.ViewMode.NORMAL);
-    // Call play to start showing the ad. Single video and overlay ads will
-    // start at this time; the call will be ignored for ad rules.
     adsManager.start();
+    if (adsManager.getAdSkippableState()) {
+      setTimeout(function () {
+        mainContainerNlVastYtb.appendChild(playButton);
+      }, 3500);
+    }
   } catch (adError) {
     // An error may be thrown if there was a problem with the VAST response.
     // videoContent.play();
   }
 }
-
+function skipAds() {
+  player.playVideo();
+  content.style.zIndex = 1;
+}
 /**
  * Handles the ad manager loading and sets ad event listeners.
  * @param {!google.ima.AdsManagerLoadedEvent} adsManagerLoadedEvent
@@ -185,6 +204,8 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
   adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdEvent);
   adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, onAdEvent);
   adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdEvent);
+  adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, onAdEvent);
+  adsManager.addEventListener(google.ima.AdEvent.Type.USE_CLOSE, onAdEvent);
 }
 
 /**
@@ -218,10 +239,20 @@ function onAdEvent(adEvent) {
         }, 300); // every 300ms
       }
       break;
+    case google.ima.AdEvent.Type.SKIPPED:
+      // This event indicates the ad has finished - the video player
+      // can perform appropriate UI actions, such as removing the timer for
+      // remaining time detection.
+      skipAds();
+      if (ad.isLinear()) {
+        clearInterval(intervalTimer);
+      }
+      break;
     case google.ima.AdEvent.Type.COMPLETE:
       // This event indicates the ad has finished - the video player
       // can perform appropriate UI actions, such as removing the timer for
       // remaining time detection.
+      adsManager.destroy();
       player.playVideo();
       content.style.zIndex = 1;
       if (ad.isLinear()) {
@@ -239,11 +270,8 @@ function onAdError(adErrorEvent) {
   // Handle the error logging.
   console.log(adErrorEvent.getError());
   adsManager.destroy();
+  content.style.zIndex = 1;
 }
-
-/**
- * Pauses video content and sets up ad UI.
- */
 function onContentPauseRequested() {
   isAdPlaying = true;
   // videoContent.pause();
@@ -260,11 +288,5 @@ function onContentResumeRequested() {
   if (!isContentFinished) {
     // videoContent.play();
   }
-  // This function is where you should ensure that your UI is ready
-  // to play content. It is the responsibility of the Publisher to
-  // implement this function when necessary.
-  // setupUIForContent();
 }
-
-// Wire UI element references and UI event listeners.
 init();

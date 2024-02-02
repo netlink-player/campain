@@ -4,6 +4,37 @@ function InStreamNLYtb(idVideoYtb, sizePlayer) {
   instreamDiv.style.width = sizePlayer[0] + "px";
   instreamDiv.style.position = "relative";
 
+
+
+  //progess
+  var styleProgess = `
+  .progressBarNL {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background-color: #ffdfdf;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+  }
+
+  .progressNL {
+    height: 100%;
+    background-color: #007bff;
+    width: 0;
+    border-radius: 0px 8px 8px 0px;
+    transition: width 0.3s ease;
+  }`;
+  var cssProgess = document.createElement("style");
+  cssProgess.innerHTML = styleProgess;
+  // instreamDiv.appendChild(cssProgess);
+
+  var progressBarNL = document.createElement("div");
+  progressBarNL.className = 'progressBarNL';
+  var progressNL = document.createElement("div");
+  progressNL.className = 'progressNL';
+  progressBarNL.appendChild(progressNL);
+  // instreamDiv.appendChild(progressBarNL);
+
   // Tạo phần tử video
   var videoElement = document.createElement("video");
   videoElement.style.position = "absolute";
@@ -16,7 +47,7 @@ function InStreamNLYtb(idVideoYtb, sizePlayer) {
   videoElement.style.height = sizePlayer[1] + "px";
   videoElement.style.left = "0px";
   videoElement.muted = true;
-  videoElement.style.objectFit = 'fill';
+  videoElement.style.objectFit = "fill";
 
   // Tạo phần tử source
   var sourceElement = document.createElement("source");
@@ -60,14 +91,15 @@ function InStreamNLYtb(idVideoYtb, sizePlayer) {
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName("script")[0];
   // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  instreamDiv.appendChild(tag);
+  // instreamDiv.appendChild(tag);
+  instreamDiv.insertBefore(tag, instreamDiv.firstChild);
 
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
 
   var player;
   function onYouTubeIframeAPIReady() {
-    player = new YT.Player("player", {
+    player = new YT.Player("youtubePlayerNL", {
       height: sizePlayer[1],
       width: sizePlayer[0],
       videoId: `${idVideoYtb}`,
