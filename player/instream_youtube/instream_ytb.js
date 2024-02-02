@@ -1,10 +1,8 @@
-function InStreamNLYtb(idVideoYtb, sizePlayer) {
+function InStreamNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
   // Lấy tham chiếu đến phần tử <div> có id là 'instreamNlYtb'
   var instreamDiv = document.getElementById("instreamNlYtb");
   instreamDiv.style.width = sizePlayer[0] + "px";
   instreamDiv.style.position = "relative";
-
-
 
   //progess
   var styleProgess = `
@@ -29,9 +27,9 @@ function InStreamNLYtb(idVideoYtb, sizePlayer) {
   // instreamDiv.appendChild(cssProgess);
 
   var progressBarNL = document.createElement("div");
-  progressBarNL.className = 'progressBarNL';
+  progressBarNL.className = "progressBarNL";
   var progressNL = document.createElement("div");
-  progressNL.className = 'progressNL';
+  progressNL.className = "progressNL";
   progressBarNL.appendChild(progressNL);
   // instreamDiv.appendChild(progressBarNL);
 
@@ -44,15 +42,15 @@ function InStreamNLYtb(idVideoYtb, sizePlayer) {
   videoElement.loop = false;
   videoElement.style.zIndex = "1";
   videoElement.style.width = sizePlayer[0] + "px";
-  videoElement.style.height = sizePlayer[1] + "px";
+  videoElement.style.height = "100%";
   videoElement.style.left = "0px";
+  videoElement.style.bottom = 0;
   videoElement.muted = true;
   videoElement.style.objectFit = "fill";
 
   // Tạo phần tử source
   var sourceElement = document.createElement("source");
-  sourceElement.src =
-    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/outstreamjs/video_outstreamjs.mp4";
+  sourceElement.src = sourceVideoInstream;
   sourceElement.type = "video/mp4";
 
   // Thêm phần tử source vào phần tử video
