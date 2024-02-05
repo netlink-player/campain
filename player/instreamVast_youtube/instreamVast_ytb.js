@@ -29,7 +29,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
       playerVars: {
         playsinline: 1,
         height: '640px',
-        width: '360px',
+        style: "height: 360px !important; width: 640px !important;",
       },
       events: {
         onReady: onPlayerReady,
