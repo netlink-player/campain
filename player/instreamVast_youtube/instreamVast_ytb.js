@@ -11,7 +11,7 @@ let isAdPlaying;
 let isContentFinished;
 let playButton = document.createElement("button");
 let videoContent;
-let content;
+let contentNLVastYtb;
 let mainContainerNlVastYtb;
 let sizeWidth = 640;
 let sizeHeight = 360;
@@ -50,7 +50,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
       console.log("Video đang phát");
       if (!isAds) {
         setTimeout(playAds, 0);
-        content.style.zIndex = 0;
+        contentNLVastYtb.style.zIndex = 0;
         isAds = true;
       }
     } else if (event.data == YT.PlayerState.PAUSED) {
@@ -72,8 +72,17 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
     mainContainerNlVastYtb.style.height = sizeHeight;
 
     videoContent = document.getElementById("youtubePlayer");
-    content = document.getElementById("content");
-    content.style.zIndex = 1;
+    contentNLVastYtb = document.getElementById("contentNLVastYtb");
+    contentNLVastYtb.style.zIndex = 1;
+    contentNLVastYtb.style.position = "absolute";
+    contentNLVastYtb.style.width = sizeWidth;
+    contentNLVastYtb.style.height = sizeHeight;
+
+    var adContainerNLVastYtb = document.getElementById("adContainerNLVastYtb");
+    adContainerNLVastYtb.style.position = "absolute";
+    adContainerNLVastYtb.style.width = sizeWidth;
+    adContainerNLVastYtb.style.height = sizeHeight;
+    adContainerNLVastYtb.style.top = 0;
 
     playButton.innerText = "SKIP ADS";
     playButton.style.position = "absolute";
@@ -94,7 +103,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
 
     var scripApiYtb = document.createElement("script");
     scripApiYtb.src = "https://www.youtube.com/iframe_api";
-  
+
     mainContainerNlVastYtb.insertBefore(
       scripApiYtb,
       mainContainerNlVastYtb.firstChild
@@ -152,7 +161,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
     // We assume the adContainer is the DOM id of the element that will house
     // the ads.
     adDisplayContainer = new google.ima.AdDisplayContainer(
-      document.getElementById("adContainer"),
+      document.getElementById("adContainerNLVastYtb"),
       videoContent
     );
   }
@@ -179,7 +188,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
   }
   function skipAds() {
     player.playVideo();
-    content.style.zIndex = 1;
+    contentNLVastYtb.style.zIndex = 1;
   }
   /**
    * Handles the ad manager loading and sets ad event listeners.
@@ -267,7 +276,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
         // remaining time detection.
         adsManager.destroy();
         player.playVideo();
-        content.style.zIndex = 1;
+        contentNLVastYtb.style.zIndex = 1;
         if (ad.isLinear()) {
           clearInterval(intervalTimer);
         }
@@ -283,7 +292,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
     // Handle the error logging.
     console.log(adErrorEvent.getError());
     adsManager.destroy();
-    content.style.zIndex = 1;
+    contentNLVastYtb.style.zIndex = 1;
   }
   function onContentPauseRequested() {
     isAdPlaying = true;
