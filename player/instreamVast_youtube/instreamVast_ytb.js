@@ -68,20 +68,48 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
     //mainContainerNlVastYtb
     mainContainerNlVastYtb = document.getElementById("mainContainerNlVastYtb");
     mainContainerNlVastYtb.style.position = "relative";
-    mainContainerNlVastYtb.style.width = sizeWidth;
-    mainContainerNlVastYtb.style.height = sizeHeight;
+    mainContainerNlVastYtb.style.setProperty(
+      "width",
+      sizeWidth + "px",
+      "important"
+    );
+    mainContainerNlVastYtb.style.width = sizeWidth + "px";
+
+    mainContainerNlVastYtb.style.setProperty(
+      "height",
+      sizeHeight + "px",
+      "important"
+    );
+    mainContainerNlVastYtb.style.height = sizeHeight + "px";
 
     videoContent = document.getElementById("youtubePlayer");
     contentNLVastYtb = document.getElementById("contentNLVastYtb");
     contentNLVastYtb.style.zIndex = 1;
     contentNLVastYtb.style.position = "absolute";
-    contentNLVastYtb.style.width = sizeWidth;
-    contentNLVastYtb.style.height = sizeHeight;
+    contentNLVastYtb.style.width = sizeWidth + "px";
+    contentNLVastYtb.style.height = sizeHeight + "px";
+
+    contentNLVastYtb.style.setProperty("width", sizeWidth + "px", "important");
+    contentNLVastYtb.style.setProperty(
+      "height",
+      sizeHeight + "px",
+      "important"
+    );
 
     var adContainerNLVastYtb = document.getElementById("adContainerNLVastYtb");
     adContainerNLVastYtb.style.position = "absolute";
-    adContainerNLVastYtb.style.width = sizeWidth;
-    adContainerNLVastYtb.style.height = sizeHeight;
+    adContainerNLVastYtb.style.width = sizeWidth + "px";
+    adContainerNLVastYtb.style.height = sizeHeight + "px";
+    adContainerNLVastYtb.style.setProperty(
+      "width",
+      sizeWidth + "px",
+      "important"
+    );
+    adContainerNLVastYtb.style.setProperty(
+      "height",
+      sizeHeight + "px",
+      "important"
+    );
     adContainerNLVastYtb.style.top = 0;
 
     playButton.innerText = "SKIP ADS";
