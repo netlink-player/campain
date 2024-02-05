@@ -28,6 +28,8 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
       videoId: "3SaNmAn8ptQ",
       playerVars: {
         playsinline: 1,
+        height: '640px',
+        width: '360px',
       },
       events: {
         onReady: onPlayerReady,
