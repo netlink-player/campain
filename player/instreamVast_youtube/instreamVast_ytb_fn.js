@@ -84,6 +84,8 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
     mainContainerNlVastYtb.style.height = sizeHeight + "px";
 
     videoContent = document.getElementById("youtubePlayer");
+    videoContent.style.setProperty("width", sizeWidth + "px", "important");
+    videoContent.style.setProperty("height", sizeHeight + "px", "important");
     contentNLVastYtb = document.getElementById("contentNLVastYtb");
     contentNLVastYtb.style.zIndex = 1;
     contentNLVastYtb.style.position = "absolute";
