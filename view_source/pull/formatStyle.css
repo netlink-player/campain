@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#apps-ad {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -700px;
+    overflow: hidden;
+}
+
+#banner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#ad-background {
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+#ad-invitation {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+}
+
+#ad-banner {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 0;
+}
+
+#ad-banner.small-screen {
+    /* Only for 3:4 screen. */
+    height: 100%;
+}
+
+.invitation-content {
+    width: 100%;
+    height: 100%;
+}
+
+.fully-exp-invitation>.invitation-content {
+    display: none;
+}
+
+/** ========== Banner Best Experience ========== **/
+
+#banner-better-experience {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 49000;
+}
+
+#banner-better-text {
+    width: 320px;
+    height: 40px;
+    margin: auto;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+#repeat-rotateicon {
+    background-image: url('rotate_anim_full.png');
+    background-position: 0px 0px;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    animation: bestView 0.8s steps(1, end) infinite;
+    -webkit-animation: bestView 0.8s steps(1, end) infinite;
+}
+
+@keyframes bestView {
+    0% {
+        background-position: 0px 0px;
+    }
+    20% {
+        background-position: -120px 0px;
+    }
+    40% {
+        background-position: -240px 0px;
+    }
+    60% {
+        background-position: -360px 0px;
+    }
+    80% {
+        background-position: -480px 0px;
+    }
+    100% {
+        background-position: -600px 0px;
+    }
+}
+
+@-webkit-keyframes bestView {
+    0% {
+        background-position: 0px 0px;
+    }
+    20% {
+        background-position: -120px 0px;
+    }
+    40% {
+        background-position: -240px 0px;
+    }
+    60% {
+        background-position: -360px 0px;
+    }
+    80% {
+        background-position: -480px 0px;
+    }
+    100% {
+        background-position: -600px 0px;
+    }
+}
+
+/* This is temporary iOS workaround to fix iOS scroll event blocking touch events. */
+
+#ios-workaround {
+    width: 1px;
+    height: 1px;
+    border: none;
+    overflow: hidden;
+}

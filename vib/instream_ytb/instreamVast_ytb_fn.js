@@ -19,7 +19,7 @@ let sizeHeight = 360;
  * Initializes IMA setup.
  */
 
-function InStreamVastNLYtb(idVideoYtb, sizePlayer) {
+function InStreamVastNLYtb(idVideoYtb, sizePlayer, vastTag) {
   sizeWidth = sizePlayer[0];
   sizeHeight = sizePlayer[1];
   var player;
@@ -30,7 +30,7 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer) {
       videoId: idVideoYtb,
       playerVars: {
         playsinline: 1,
-        style: "height: 360px !important; width: 640px !important;",
+        style: "height: " + sizeHeight + "px !important; width:" + sizeWidth + "px !important;",
       },
       events: {
         onReady: onPlayerReady,
@@ -169,8 +169,8 @@ function InStreamVastNLYtb(idVideoYtb, sizePlayer) {
 
     // Request video ads.
     const adsRequest = new google.ima.AdsRequest();
-    adsRequest.adTagUrl =
-      "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=https%3A%2F%2Fnetlink.vn%2F&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+    adsRequest.adTagUrl = vastTag;
+      // "https://pubads.g.doubleclick.net/gampad/ads?iu=/22486823495/video_instream&description_url=https%3A%2F%2Fnetlink.vn%2F&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
     // "https://pubads.g.doubleclick.net/gampad/ads?" +
     // "iu=/21775744923/external/single_ad_samples&sz=640x480&" +
     // "cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&" +

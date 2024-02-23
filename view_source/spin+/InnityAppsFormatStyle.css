@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#innity-apps-ad {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#innity-apps-ad-banner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#innity-apps-banner-content {
+  height: 100%;
+  margin: auto;
+  position: fixed;
+  width: 100%;
+}
+
+.banner-transform-animation {
+  transition: transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+}
+#innity-apps-banner-content.clockwise {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  transform-origin: center 200%;
+  -webkit-transform-origin: center 200%;
+}
+#innity-apps-banner-content.counter-clockwise {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform-origin: center 200%;
+  -webkit-transform-origin: center 200%;
+}
+
+.innity-apps-absolute-container {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.innity-apps-creative-safe-area-bg {
+  position:relative;
+  width: 100%;
+}
+
+.innity-apps-creative-safe-area-container {
+  left: 0;
+  position:absolute;
+  top: 0;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.innity-apps-creative-safe-area-square-img {
+  display: block;
+  width: 100%;
+}
+
+/* ========== Sliding Layer ========== */
+.innity-apps-banner-slide {
+  z-index: 100;
+
+  transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+}
+
+/* ========== Sliding Layer ========== */
+/* .innity-apps-banner-slide {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+.innity-apps-banner-slide.clockwise {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+}
+.innity-apps-banner-slide.transition {
+  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+}
+.innity-apps-banner-slide.active {
+  z-index: 150;
+
+  transform: rotate(0deg);
+}
+.innity-apps-banner-slide.spinning {
+  z-index: 200;
+
+  transform: rotate(0deg);
+} */
+
+/* ========== Sliding Fade Layer ========== */
+/* .innity-apps-banner-slide {
+  opacity:0;
+
+  transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+}
+.innity-apps-banner-slide.clockwise {
+  opacity:0;
+}
+.innity-apps-banner-slide.transition {
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+.innity-apps-banner-slide.active {
+  z-index: 150;
+  
+  opacity:1;
+}
+.innity-apps-banner-slide.spinning {
+  z-index: 200;
+
+  opacity:1;
+} */
+

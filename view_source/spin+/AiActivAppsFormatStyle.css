@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+#aiactiv-apps-ad {
+  overflow: hidden;
+  width: 100%;
+}
+
+#aiactiv-apps-ad-invitation {
+  height: 25%;
+  overflow: hidden;
+  width: 100%;
+}
+
+#aiactiv-apps-invitation-background-container,
+#aiactiv-apps-invitation-foreground-container {
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#aiactiv-apps-invitation-background-container img,
+#aiactiv-apps-invitation-foreground-container img {
+  display: block;
+  width: 100%;
+}
+
+#aiactiv-apps-invitation-content {
+  margin: auto;
+  width: 100%;
+}
+
+#aiactiv-apps-invitation-content img {
+  width: 100%;
+}
+
+.aiactiv-apps-invitation-spin-img {
+  vertical-align: middle;
+}
+
+.floating-content {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 100;
+  -webkit-transform: translateZ(0.1px);
+  transform: translateZ(0.1px);
+}
+
+.floating-content * {
+  pointer-events: none;
+}
+
+.floating-on-top {
+  z-index: 100;
+}
+
+.foreground-image {
+  display: block;
+  width: 100%;
+}
+
+/* This is temporary iOS workaround to fix iOS scroll event blocking touch events. */
+
+#aiactiv-apps-ios-workaround {
+  border: none;
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+}
