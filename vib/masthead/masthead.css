@@ -1,0 +1,28 @@
+
+.masthead {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.masthead iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+img{
+    max-width: 100%;
+}
+
+.ie6 img {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .masthead {
+        /* display: none; */
+    }
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
