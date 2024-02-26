@@ -91,6 +91,8 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   btnNetlinkClose.style.animationTimingFunction = "ease-in-out";
   // btnNetlinkCloseE.appendChild(btnNetlinkClose);
 
+  
+
   //in_imgae_affter
 
   var elmNetlinkAfter = document.createElement("iframe");
@@ -137,7 +139,8 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
 
   var imgBottom = document.createElement("img");
   imgBottom.style.position = "absolute";
-  imgBottom.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/banner_bottom.png";
+  imgBottom.src =
+    "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/banner_bottom.png";
   imgBottom.style.setProperty(
     "width",
     images[_image].width + "px",
@@ -152,10 +155,21 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   divBottom.appendChild(elmNetlinkAfter);
 
   // Chèn hình ảnh đầu tiên và hình ảnh mới vào container_larg
-  container_larg.appendChild(images[_image].cloneNode(true));
-  container_small.appendChild(newImage);
 
-  container_small.appendChild(btnNetlinkClose);
+  var divTop = document.createElement("div");
+  divTop.id = "divTop";
+  divTop.style.position = "relative";
+
+  
+  // container_larg.appendChild(images[_image].cloneNode(true));
+  // container_small.appendChild(newImage);
+  divTop.appendChild(images[_image].cloneNode(true));
+
+  divTop.appendChild(newImage);
+
+  // container_small.appendChild(btnNetlinkClose);
+  divTop.appendChild(btnNetlinkClose);
+  container_small.appendChild(divTop);
   container_small.appendChild(divBottom);
 
   //add------------------------
@@ -165,6 +179,8 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
 
   images[_image].parentNode.replaceChild(container_larg, images[_image]);
   btnNetlinkClose.addEventListener("click", () => {
-    container_larg.removeChild(container_small);
+    divTop.removeChild(newImage);
+    divTop.removeChild(btnNetlinkClose);
+    container_small.removeChild(divBottom);
   });
 };
