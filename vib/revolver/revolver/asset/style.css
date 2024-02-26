@@ -1,0 +1,55 @@
+.expanded-ad-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  #video-wrapper-1 {
+    top: 31%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    transform: translateZ(0);
+  }
+  
+  #video-wrapper-2 {
+    top: 31%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    transform: translateZ(0);
+  }
+  
+  #video-wrapper-3 {
+    top: 31%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    transform: translateZ(0);
+  }
+  
+  /* To adjust video fit into creative dimension. creative is 1024x1332 ratio. */
+  .apps-creative-video {
+    bottom: unset;
+    top: 0;
+  }
+  
+  /* Adjust this for the video control layer. */
+  .controllers-container {
+    background: none !important;
+    bottom: 2%;
+    z-index: 0;
+  }
+  
+  
+  .designer_banner_foreground {
+    pointer-events: none;
+    position: absolute;
+    width: 111%;
+    top: -38px;
+    left: -15px;
+    -webkit-transform: translateZ(35px);
+    transform: translateZ(35px);
+  }

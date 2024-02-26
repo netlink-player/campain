@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #innity-apps-ad {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+  }
+  
+  #innity-apps-expanded-ad {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+  
+  #innity-apps-expanded-bg {
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: top 1s, opacity 1s;
+    -moz-transition: top 1s, opacity 1s;
+    -webkit-transition: top 1s, opacity 1s;
+    width: 100vw;
+  }
+  #innity-apps-expanded-bg.innity-apps-hide {
+    opacity: 0;
+    top: 120%;
+  }
+  
+  #innity-apps-invitation-ad {
+    height: calc(100vw / 9 * 4);
+    left: 0;
+    opacity: 1;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: top 1s, opacity 1s;
+    -moz-transition: top 1s, opacity 1s;
+    -webkit-transition: top 1s, opacity 1s;
+    width: 100vw;
+  }
+  #innity-apps-invitation-ad.innity-apps-hide {
+    opacity: 0;
+    top: 800px;
+  }
+  
+  .innity-apps-banner-image {
+    background: rgba(0, 0, 0, 0.01);
+    display: block;
+    width: 100%;
+  }
+  
+  .innity-apps-carol-big, .innity-apps-carol-small {
+    left: 10%;
+    overflow: hidden;
+    position: absolute;
+    transition: transform 1s;
+    -moz-transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    width: 80%;
+  }
+  .innity-apps-carol-big {
+    overflow: visible;
+    transition: transform .5s;
+    -moz-transition: transform .5s;
+    -webkit-transition: -webkit-transform .5s;
+  }
+  
+  /* This cannot follow alphabet order due to priority ordering. */
+  .innity-apps-carol-big {
+    left: 0;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    width: 100%;
+  }
+  
+  .innity-apps-carol-card-1 {
+    transform: rotateY(0deg) translateZ(288px);
+    -moz-transform: rotateY(0deg) translateZ(288px);
+    -webkit-transform: rotateY(0deg) translateZ(288px);
+  }
+  .innity-apps-carol-card-2 {
+    transform: rotateY(40deg) translateZ(288px);
+    -moz-transform: rotateY(40deg) translateZ(288px);
+    -webkit-transform: rotateY(40deg) translateZ(288px);
+  }
+  .innity-apps-carol-card-3 {
+    transform: rotateY(80deg) translateZ(288px);
+    -moz-transform: rotateY(80deg) translateZ(288px);
+    -webkit-transform: rotateY(80deg) translateZ(288px);
+  }
+  .innity-apps-carol-card-4 {
+    transform: rotateY(120deg) translateZ(288px);
+    -moz-transform: rotateY(120deg) translateZ(288px);
+    -webkit-transform: rotateY(120deg) translateZ(288px);
+  }
+  .innity-apps-carol-card-5 {
+    transform: rotateY(160deg) translateZ(288px);
+    -moz-transform: rotateY(160deg) translateZ(288px);
+    -webkit-transform: rotateY(160deg) translateZ(288px);
+  }
+  
+  .innity-apps-carol-small img {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    display: block;
+    width: 100%;
+  }
+  
+  .innity-apps-expanded-carol-container {
+    transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    transform-origin: center center;
+    -moz-transform-origin: center center;
+    -webkit-transform-origin-x: center;
+    -webkit-transform-origin-y: center;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 1s;
+    -moz-transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    width: 100%;
+  }
+  
+  .innity-apps-expanded-scene {
+    height: 160px;
+    margin: 0 auto;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    position: relative;
+    width: 90px;
+  
+    transition: margin-top .2s ease-in-out;
+    -moz-transition: margin-top .2s ease-in-out;
+    -webkit-transition: margin-top .2s ease-in-out;
+  }
+  
+  .innity-apps-invitation-carol-container {
+    transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    transform-origin: center center;
+    -moz-transform-origin: center center;
+    -webkit-transform-origin-x: center;
+    -webkit-transform-origin-y: center;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 1s;
+    -moz-transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    width: 100%;
+  }
+  
+  .innity-apps-invitation-scene {
+    height: 120px;
+    margin: 0 auto;
+    perspective: 700px;
+    -webkit-perspective: 700px;
+    position: relative;
+    width: 200px;
+  }
+  
+  .innity-apps-round-corner {
+    border-radius: 32px;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+  }
+  
+  /* This is temporary iOS workaround to fix iOS scroll event blocking touch events. */
+  #innity-apps-ios-workaround {
+    width: 1px;
+    height: 1px;
+    border: none;
+    overflow: hidden;
+  }

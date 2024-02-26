@@ -1,4 +1,4 @@
-var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
+var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx, _btClpx) {
   var _body = window.top.document.querySelector("body");
 
   var _image = _intimage;
@@ -83,7 +83,7 @@ var InImageVideoNetlink = function (_intimage, _srcimage, _srcytb, _btpx) {
   btnNetlinkClose.style.setProperty("width", "30px", "important");
   btnNetlinkClose.style.setProperty("height", "30px", "important");
   btnNetlinkClose.style.setProperty("right", "10px", "important");
-  btnNetlinkClose.style.setProperty("bottom", "225px", "important");
+  btnNetlinkClose.style.setProperty("bottom", _btClpx + "px", "important");
 
   btnNetlinkClose.style.cursor = "pointer";
   btnNetlinkClose.style.animationName = "btnClose";
