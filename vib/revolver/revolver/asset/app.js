@@ -8,24 +8,24 @@ function innityAppsBannerLoaded() {
 
   isBannerLoaded = true;
 
-  let clicktags = document.getElementsByClassName('clicktag');
+  let clicktags = document.getElementsByClassName("clicktag");
   for (let i = 0; i < clicktags.length; i++) {
-    clicktags[i].addEventListener('click', function() {
-      innityAppsTriggerClickTag(this.getAttribute('data-clicktag'));
+    clicktags[i].addEventListener("click", function () {
+      innityAppsTriggerClickTag(this.getAttribute("data-clicktag"));
     });
   }
 }
 
 function invitationLandToSlideNumber(number, isAutomation) {
-//  console.log('invitation land to ' + number, isAutomation);
+  //  console.log('invitation land to ' + number, isAutomation);
 }
 
 function expandedLandToSlideNumber(number, isAutomation) {
-//  console.log('expanded land to ' + number, isAutomation);
+  //  console.log('expanded land to ' + number, isAutomation);
 
   initVideo();
 
-  innityAppsTriggerTimerStart('frame' + parseInt(number));
+  innityAppsTriggerTimerStart("frame" + parseInt(number));
 
   if (number === 1) {
     innityAppsPlayVideo();
@@ -64,33 +64,34 @@ function initVideo() {
 // ========== Video template required code ==========
 let innityAppsFallbackPlayer = null;
 let innityAppsVideoPlayer = null;
-let innityAppsVisibilityHidden = 'hidden';
-
+let innityAppsVisibilityHidden = "hidden";
+const urlImage =
+  "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/revolver/revolver/";
 function innityAppsEmbedAutoplayVideo() {
-  if (document.getElementById('video-wrapper-1') === null) {
+  if (document.getElementById("video-wrapper-1") === null) {
     return;
   }
 
   innityAppsVideoPlayer = new InnityAppsMobileAutoPlayVideo(
-    'video-wrapper-1',
-    'video1',
+    "video-wrapper-1",
+    "video1",
     {
-      webm: 'video1.webm',
-      mp4: 'video1.mp4',
-      mpg: 'video1.mpg',
+      webm: urlImage + "video1.webm",
+      mp4: urlImage + "video1.mp4",
+      mpg: urlImage + "video1.mpg",
       poster: adStudioVideoPosterName,
       autoplay: false,
       loop: false,
       forceFallback: false,
       // For fallback player.
       fullscreen: true,
-      canvaswidth: '320',
-      canvasheight: '180',
-      midctatext: 'Learn More',
-      playstatectatext: 'Learn More',
-      urls: innityAppsVideoClickTag
+      canvaswidth: "320",
+      canvasheight: "180",
+      midctatext: "Learn More",
+      playstatectatext: "Learn More",
+      urls: innityAppsVideoClickTag,
     },
-    'video1.jpg' // this is fallback video poster.
+    urlImage + "video1.png" // this is fallback video poster.
   );
 
   innityAppsFallbackPlayer = innityAppsVideoPlayer.getFallbackPlayer();
@@ -128,29 +129,33 @@ function innityAppsPlayVideo() {
 }
 
 function innityAppsRunFallbackVideo() {
-//    fallbackPlayer.noLoop(); // Preview will not loop after ended.
-//    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
-//    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
-//    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
-//    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
-//    fallbackPlayer.addListener('play', fallbackVideoPlayed);
-//    fallbackPlayer.addListener('ended', whenPreviewEnded);
-//    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
-//    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
+  //    fallbackPlayer.noLoop(); // Preview will not loop after ended.
+  //    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
+  //    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
+  //    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
+  //    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
+  //    fallbackPlayer.addListener('play', fallbackVideoPlayed);
+  //    fallbackPlayer.addListener('ended', whenPreviewEnded);
+  //    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
+  //    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
   innityAppsFallbackPlayer.startEngine(); // This is always required!!!!!
 }
 
 function innityAppsVisibilityBinding() {
-  var visibilityChangeEvent = 'visibilitychange';
-  if (typeof (document.msHidden) !== 'undefined') {
-    innityAppsVisibilityHidden = 'msHidden';
-    visibilityChangeEvent = 'msvisibilitychange';
-  } else if (typeof (document.webkitHidden) !== 'undefined') {
-    innityAppsVisibilityHidden = 'webkitHidden';
-    visibilityChangeEvent = 'webkitvisibilitychange';
+  var visibilityChangeEvent = "visibilitychange";
+  if (typeof document.msHidden !== "undefined") {
+    innityAppsVisibilityHidden = "msHidden";
+    visibilityChangeEvent = "msvisibilitychange";
+  } else if (typeof document.webkitHidden !== "undefined") {
+    innityAppsVisibilityHidden = "webkitHidden";
+    visibilityChangeEvent = "webkitvisibilitychange";
   }
 
-  document.addEventListener(visibilityChangeEvent, innityAppsVisibilityChange, false);
+  document.addEventListener(
+    visibilityChangeEvent,
+    innityAppsVisibilityChange,
+    false
+  );
 }
 
 function innityAppsVisibilityChange() {
@@ -163,43 +168,42 @@ function innityAppsVisibilityChange() {
     innityAppsVideoPlayer.pauseVideo();
   } else {
     // When browser is active or focus.
-//        videoPlayer.playVideo();
+    //        videoPlayer.playVideo();
   }
 }
 // ========== Video template required code ==========
 
-
 // ========== Video 2 template required code ==========
 let innityAppsFallbackPlayer2 = null;
 let innityAppsVideoPlayer2 = null;
-let innityAppsVisibilityHidden2 = 'hidden';
+let innityAppsVisibilityHidden2 = "hidden";
 
 function innityAppsEmbedAutoplayVideo2() {
-  if (document.getElementById('video-wrapper-1') === null) {
+  if (document.getElementById("video-wrapper-1") === null) {
     return;
   }
 
   innityAppsVideoPlayer2 = new InnityAppsMobileAutoPlayVideo(
-      'video-wrapper-2',
-      'video2',
-      {
-        webm: 'video2.webm',
-        mp4: 'video2.mp4',
-        mpg: 'video2.mpg',
-        poster: adStudioVideoPosterName2,
-        autoplay: false,
-        loop: false,
-        forceFallback: false,
-        // For fallback player.
-        fullscreen: true,
-        canvaswidth: '320',
-        canvasheight: '180',
-        midctatext: 'Learn More',
-        playstatectatext: 'Learn More',
-        urls: innityAppsVideoClickTag
-      },
-      'video2.jpg' // this is fallback video poster.
-      );
+    "video-wrapper-2",
+    "video2",
+    {
+      webm: urlImage + "video2.webm",
+      mp4: urlImage + "video2.mp4",
+      mpg: urlImage + "video2.mpg",
+      poster: adStudioVideoPosterName2,
+      autoplay: false,
+      loop: false,
+      forceFallback: false,
+      // For fallback player.
+      fullscreen: true,
+      canvaswidth: "320",
+      canvasheight: "180",
+      midctatext: "Learn More",
+      playstatectatext: "Learn More",
+      urls: innityAppsVideoClickTag,
+    },
+    urlImage + "video2.png" // this is fallback video poster.
+  );
 
   innityAppsFallbackPlayer2 = innityAppsVideoPlayer2.getFallbackPlayer();
   if (innityAppsFallbackPlayer2 !== null) {
@@ -236,29 +240,33 @@ function innityAppsPlayVideo2() {
 }
 
 function innityAppsRunFallbackVideo2() {
-//    fallbackPlayer.noLoop(); // Preview will not loop after ended.
-//    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
-//    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
-//    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
-//    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
-//    fallbackPlayer.addListener('play', fallbackVideoPlayed);
-//    fallbackPlayer.addListener('ended', whenPreviewEnded);
-//    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
-//    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
+  //    fallbackPlayer.noLoop(); // Preview will not loop after ended.
+  //    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
+  //    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
+  //    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
+  //    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
+  //    fallbackPlayer.addListener('play', fallbackVideoPlayed);
+  //    fallbackPlayer.addListener('ended', whenPreviewEnded);
+  //    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
+  //    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
   innityAppsFallbackPlayer2.startEngine(); // This is always required!!!!!
 }
 
 function innityAppsVisibilityBinding2() {
-  var visibilityChangeEvent = 'visibilitychange';
-  if (typeof (document.msHidden) !== 'undefined') {
-    innityAppsVisibilityHidden2 = 'msHidden';
-    visibilityChangeEvent = 'msvisibilitychange';
-  } else if (typeof (document.webkitHidden) !== 'undefined') {
-    innityAppsVisibilityHidden2 = 'webkitHidden';
-    visibilityChangeEvent = 'webkitvisibilitychange';
+  var visibilityChangeEvent = "visibilitychange";
+  if (typeof document.msHidden !== "undefined") {
+    innityAppsVisibilityHidden2 = "msHidden";
+    visibilityChangeEvent = "msvisibilitychange";
+  } else if (typeof document.webkitHidden !== "undefined") {
+    innityAppsVisibilityHidden2 = "webkitHidden";
+    visibilityChangeEvent = "webkitvisibilitychange";
   }
 
-  document.addEventListener(visibilityChangeEvent, innityAppsVisibilityChange2, false);
+  document.addEventListener(
+    visibilityChangeEvent,
+    innityAppsVisibilityChange2,
+    false
+  );
 }
 
 function innityAppsVisibilityChange2() {
@@ -271,43 +279,42 @@ function innityAppsVisibilityChange2() {
     innityAppsVideoPlayer2.pauseVideo();
   } else {
     // When browser is active or focus.
-//        videoPlayer.playVideo();
+    //        videoPlayer.playVideo();
   }
 }
 // ========== Video 2 template required code ==========
 
-
 // ========== Video 3 template required code ==========
 let innityAppsFallbackPlayer3 = null;
 let innityAppsVideoPlayer3 = null;
-let innityAppsVisibilityHidden3 = 'hidden';
+let innityAppsVisibilityHidden3 = "hidden";
 
 function innityAppsEmbedAutoplayVideo3() {
-  if (document.getElementById('video-wrapper-1') === null) {
+  if (document.getElementById("video-wrapper-1") === null) {
     return;
   }
 
   innityAppsVideoPlayer3 = new InnityAppsMobileAutoPlayVideo(
-      'video-wrapper-3',
-      'video3',
-      {
-        webm: 'video3.webm',
-        mp4: 'video3.mp4',
-        mpg: 'video3.mpg',
-        poster: adStudioVideoPosterName3,
-        autoplay: false,
-        loop: false,
-        forceFallback: false,
-        // For fallback player.
-        fullscreen: true,
-        canvaswidth: '320',
-        canvasheight: '180',
-        midctatext: 'Learn More',
-        playstatectatext: 'Learn More',
-        urls: innityAppsVideoClickTag
-      },
-      'video3.jpg' // this is fallback video poster.
-      );
+    "video-wrapper-3",
+    "video3",
+    {
+      webm: urlImage + "video3.webm",
+      mp4: urlImage + "video3.mp4",
+      mpg: urlImage + "video3.mpg",
+      poster: adStudioVideoPosterName3,
+      autoplay: false,
+      loop: false,
+      forceFallback: false,
+      // For fallback player.
+      fullscreen: true,
+      canvaswidth: "320",
+      canvasheight: "180",
+      midctatext: "Learn More",
+      playstatectatext: "Learn More",
+      urls: innityAppsVideoClickTag,
+    },
+    urlImage + "video3.png" // this is fallback video poster.
+  );
 
   innityAppsFallbackPlayer3 = innityAppsVideoPlayer3.getFallbackPlayer();
   if (innityAppsFallbackPlayer3 !== null) {
@@ -344,29 +351,33 @@ function innityAppsPlayVideo3() {
 }
 
 function innityAppsRunFallbackVideo3() {
-//    fallbackPlayer.noLoop(); // Preview will not loop after ended.
-//    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
-//    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
-//    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
-//    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
-//    fallbackPlayer.addListener('play', fallbackVideoPlayed);
-//    fallbackPlayer.addListener('ended', whenPreviewEnded);
-//    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
-//    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
+  //    fallbackPlayer.noLoop(); // Preview will not loop after ended.
+  //    fallbackPlayer.noAutoplay(); // Preview will not autoplay.
+  //    fallbackPlayer.remainPreviewAfterClick(); // Preview will remain there after clicked.
+  //    fallbackPlayer.setClickCallback(whenFallbackAutoplayIsClicked);
+  //    fallbackPlayer.addListener('load', fallbackVideoOnLoad);
+  //    fallbackPlayer.addListener('play', fallbackVideoPlayed);
+  //    fallbackPlayer.addListener('ended', whenPreviewEnded);
+  //    fallbackPlayer.setVideoEndedCallback(whenHTMLVideoPlayedEnded);
+  //    fallbackPlayer.fullscreenCallBack(checkVideoFullScreenStatus);
   innityAppsFallbackPlayer3.startEngine(); // This is always required!!!!!
 }
 
 function innityAppsVisibilityBinding3() {
-  var visibilityChangeEvent = 'visibilitychange';
-  if (typeof (document.msHidden) !== 'undefined') {
-    innityAppsVisibilityHidden3 = 'msHidden';
-    visibilityChangeEvent = 'msvisibilitychange';
-  } else if (typeof (document.webkitHidden) !== 'undefined') {
-    innityAppsVisibilityHidden3 = 'webkitHidden';
-    visibilityChangeEvent = 'webkitvisibilitychange';
+  var visibilityChangeEvent = "visibilitychange";
+  if (typeof document.msHidden !== "undefined") {
+    innityAppsVisibilityHidden3 = "msHidden";
+    visibilityChangeEvent = "msvisibilitychange";
+  } else if (typeof document.webkitHidden !== "undefined") {
+    innityAppsVisibilityHidden3 = "webkitHidden";
+    visibilityChangeEvent = "webkitvisibilitychange";
   }
 
-  document.addEventListener(visibilityChangeEvent, innityAppsVisibilityChange3, false);
+  document.addEventListener(
+    visibilityChangeEvent,
+    innityAppsVisibilityChange3,
+    false
+  );
 }
 
 function innityAppsVisibilityChange3() {
@@ -379,11 +390,10 @@ function innityAppsVisibilityChange3() {
     innityAppsVideoPlayer3.pauseVideo();
   } else {
     // When browser is active or focus.
-//        videoPlayer.playVideo();
+    //        videoPlayer.playVideo();
   }
 }
 // ========== Video 3 template required code ==========
-
 
 /**
  * Device orientation event callback. <br />
