@@ -1714,18 +1714,7 @@ window.addEventListener('load', function(){
                     docwidth = document.body.clientWidth;
                     docheight = document.body.clientHeight;
                 }
-                window.addEventListener('load',function() {
-                    if (docwidth > 1024) {
-                        hien_thi_banner_background_2_ben_2016(66);
-                    }
-                    //Xử lý ảnh đại diện GIF
-                    xu_ly_anh_dai_dien_dang_gif();
-                });
-
                 
-                setTimeout(function(){
-                    off_ad_zone_when_without_ads_delivery();
-                },4000);
 
                 //Xử lý banner sticky box
                 try {
@@ -1838,15 +1827,18 @@ window.addEventListener('load', function(){
                 }
             
         </script>  
-        <script src="https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/vib_inimage.js"></script>
+        <script src="vib_in.js"></script>
         <script type="text/javascript">
-        
-          new InImageVideoNetlink(
+       
+                new InImageVideoNetlink(
             4,
             "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/banner_top.png",
             "https://www.youtube.com/embed/sphSqF6e3C4?si=65Jz5SBlER3Jg186",
             0, 145
           );
+            
+        
+        
         </script>      
         <!--@@css_footer@@-->
         <script>loadCss("https://cdn.eva.vn/css/2024/font-aws.min.css?v=20240226")</script>
