@@ -103,6 +103,7 @@ function InStreamNLYtb(idVideoYtb, sizePlayer, sourceVideoInstream) {
       videoId: `${idVideoYtb}`,
       playerVars: {
         playsinline: 1,
+        autoplay: 1,
       },
       events: {
         onReady: onPlayerReady,
