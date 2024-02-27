@@ -73,15 +73,25 @@
     />
     <script src="in_image_vib.js"></script>
     <script type="text/javascript">
-    
       new InImageVideoNetlink(
         0,
         "banner_top.png",
         "https://www.youtube.com/embed/5CrF2R43YhE?si=vnZzPE0tvdIgYgXo",
-        0,200,
+        0,
+        200
       );
     </script>
     <div style="height: 1500px; background-color: yellow"></div>
+    <script>
+      var btnDlt = document.getElementById(btnDlt);
+      var div1 = document.getElementById("innity-apps-ios-workaround");
+      var div2 = document.getElementById("innity-apps-ad");
+      btnDlt.addEventListener("click", function () {
+        div1.remove();
+        div2.remove();
+        btnDlt.remove();
+      });
+    </script>
   </body>
 </html>
 <!-- https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/ -->
