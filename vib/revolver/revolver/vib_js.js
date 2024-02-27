@@ -4503,9 +4503,9 @@ InnityHTMLAd.id = "ad-staging";
 InnityHTMLAd.init(true);
 
 DesignerClickTag = {
-    clickTAG: 'http://www.innity.com',
-    clickTAG1: 'http://www.innity.com',
-    clickTAG2: 'http://www.innity.com',
-    clickTAG3: 'http://www.innity.com',
-    clickTAG4: 'http://www.innity.com',
+    clickTAG: 'https://netlink.vn/',
+    clickTAG1: 'https://netlink.vn/',
+    clickTAG2: 'https://netlink.vn/',
+    clickTAG3: 'https://netlink.vn/',
+    clickTAG4: 'https://netlink.vn/',
 };

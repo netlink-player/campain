@@ -32,7 +32,9 @@ ad_177002.adid   = "177002";
 ad_177002.zindex = "2147483645";
 ad_177002.base = innity_domain;
 ad_177002.assets = innity_assets;
-ad_177002.src = `https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/revolver/revolver/revolver.html`;
+ad_177002.src = `revolver/revolver.html?adid=c177002&init=true`;
+
+// ad_177002.src = "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/revolver/revolver/revolver.html?adid=c177002&init=true";
 // ad_177002.src = ad_177002.base + `${ad_177002.assets}${adStudioTemplateName}/index.html?adid=c177002&init=true`;
  console.log(ad_177002.src);
 function c177002_classReadyCallback() {
@@ -312,7 +314,7 @@ function c177002_InnityAppsRevolver(options) {
     function isScreenSizeSupported_() {
       let isSupported_ = true;
       if (curWin_.innerWidth * curWin_.innerHeight > supportedMaxWidth_ * supportedMaxHeight_) {
-        isSupported_ = false;
+        // isSupported_ = false;
         log_('Screen size too big. width='+curWin_.innerWidth+' height='+curWin_.innerHeight+' dimension='+(curWin_.innerWidth * curWin_.innerHeight));
       }
 

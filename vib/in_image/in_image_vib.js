@@ -142,7 +142,7 @@ var InImageVideoNetlink = function (
   divBottom.style.padding = "30px 0px 0px 0px";
 
   var imgBottom = document.createElement("img");
-  imgBottom.style.position = "absolute";
+  // imgBottom.style.position = "absolute";
   imgBottom.src =
     "https://cdn.jsdelivr.net/gh/netlink-player/campain@master/vib/in_image/banner_bottom.png";
   imgBottom.style.setProperty(
